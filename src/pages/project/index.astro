@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Project — Guo Jiaxing"
+  description="Selected code and research systems by Guo Jiaxing."
+>
+  <main id="main-content">
+    <header class="page-hero shell">
+      <p class="eyebrow">Selected code</p>
+      <h1>Systems built to answer hard questions.</h1>
+      <p>
+        These repositories turn research questions into inspectable experiments,
+        evaluation tools, and reusable systems.
+      </p>
+    </header>
+
+    <section class="project-archive shell" aria-label="Project archive">
+      {projects.map((project, index) => (
+        <a class="project-card project-card--archive" href={`/project/${project.id}/`}>
+          <div class="project-card-topline">
+            <span>P.{String(index + 1).padStart(2, '0')}</span>
+            <span>{project.data.year}</span>
+          </div>
+          <h2>{project.data.title}</h2>
+          <p>{project.data.summary}</p>
+          <div class="project-card-footer">
+            <span>{project.data.languages.join(' + ')}</span>
+            <span aria-hidden="true">↗</span>
+          </div>
+        </a>
+      ))}
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import profilePhoto from '../assets/guo-jiaxing-profile.png';
+---
+
+<BaseLayout
+  title="About — Guo Jiaxing"
+  description="About Guo Jiaxing and his work on reliable strategic decision-making."
+>
+  <main id="main-content">
+    <header class="page-hero page-hero--about shell">
+      <p class="eyebrow">About</p>
+      <h1>Building reliable intelligence for strategic worlds.</h1>
+    </header>
+
+    <section class="about-grid shell">
+      <div class="about-index">
+        <p class="section-index">Profile / 2026</p>
+        <div class="portrait-frame">
+          <Image
+            class="portrait-image"
+            src={profilePhoto}
+            alt="Portrait of Guo Jiaxing"
+            width={320}
+            quality={88}
+          />
+        </div>
+      </div>
+      <div class="about-copy">
+        <p class="about-lead">
+          I am Guo Jiaxing, a researcher and engineer working across computational game theory,
+          machine learning, and reliable decision-making.
+        </p>
+        <p>
+          My current work asks how an intelligent system should act when information is partial,
+          evidence is unreliable, and other agents can adapt to its behavior.
+        </p>
+        <p>
+          I build mathematical interfaces, evaluation methods, and research software that make
+          these questions precise enough to test.
+        </p>
+        <div class="about-links">
+          <a class="text-link" href="https://github.com/jiaxing-guo">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="/research/">Research archive <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <dl class="about-facts">
+        <div>
+          <dt>Focus</dt>
+          <dd>Reliable strategic systems</dd>
+        </div>
+        <div>
+          <dt>Methods</dt>
+          <dd>Game theory, learning, search</dd>
+        </div>
+        <div>
+          <dt>Role</dt>
+          <dd>Co-Founder, FIFTEEN AI Inc.</dd>
+        </div>
+        <div>
+          <dt>Affiliation</dt>
+          <dd>Imperial College London</dd>
+        </div>
+        <div>
+          <dt>Code</dt>
+          <dd>Python, Rust, C++, TypeScript</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="principles shell">
+      <p class="section-index">Working principles</p>
+      <div class="principles-grid">
+        <div>
+          <span>01</span>
+          <h2>Make the claim inspectable.</h2>
+          <p>A strong result states its assumptions, evidence, and failure conditions.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <h2>Test the strongest response.</h2>
+          <p>Strategic reliability requires evaluation against adaptive behavior.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <h2>Build for reproduction.</h2>
+          <p>Research code should make each important choice visible and repeatable.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

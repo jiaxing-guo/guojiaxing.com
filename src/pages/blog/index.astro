@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../utils/date';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+);
+---
+
+<BaseLayout
+  title="Blog — Guo Jiaxing"
+  description="Research notes and essays about strategic learning systems."
+>
+  <main id="main-content">
+    <header class="page-hero shell">
+      <p class="eyebrow">Blog</p>
+      <h1>Ideas, opened carefully.</h1>
+      <p>
+        Research explanations, technical notes, and essays about systems that must decide under uncertainty.
+      </p>
+    </header>
+
+    <section class="blog-archive shell" aria-label="Blog archive">
+      {posts.length > 0 ? (
+        posts.map((post) => (
+          <a class="blog-item" href={`/blog/${post.id}/`}>
+            <time datetime={post.data.publishedAt.toISOString()}>
+              {formatDate(post.data.publishedAt, 'short')}
+            </time>
+            <div>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.summary}</p>
+            </div>
+            <span aria-hidden="true">↗</span>
+          </a>
+        ))
+      ) : (
+        <div class="empty-state">
+          <span>W.00</span>
+          <h2>The first essays are in preparation.</h2>
+          <p>
+            The publishing system is ready. A private Markdown draft is included as a starting point.
+          </p>
+          <a class="text-link" href="/research/">Read the research archive <span aria-hidden="true">↗</span></a>
+        </div>
+      )}
+    </section>
+  </main>
+</BaseLayout>

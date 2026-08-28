@@ -1,0 +1,82 @@
+---
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/newsreader';
+import '../styles/global.css';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  path?: string;
+  socialImage?: string | null;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  path = Astro.url.pathname,
+  socialImage = '/og.png',
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(path, site.url);
+const imageUrl = socialImage ? new URL(socialImage, site.url) : null;
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: site.url,
+  sameAs: [site.github, site.linkedin],
+  affiliation: site.affiliations.map((name) => ({
+    '@type': 'Organization',
+    name,
+  })),
+  jobTitle: site.role,
+  worksFor: {
+    '@type': 'Organization',
+    name: site.company,
+  },
+  knowsAbout: [
+    'Computational game theory',
+    'Imperfect-information games',
+    'Policy certification',
+    'Machine learning',
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#f2f0e9" />
+    <meta name="generator" content={Astro.generator} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Guo Jiaxing — Blog" href="/rss.xml" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    <meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <SiteHeader />
+    <slot />
+    <SiteFooter />
+  </body>
+</html>

@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const research = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Research — Guo Jiaxing"
+  description="Research on strategic decision-making, imperfect information, and reliable policy evaluation."
+>
+  <main id="main-content">
+    <header class="page-hero shell">
+      <p class="eyebrow">Research archive</p>
+      <h1>Questions worth making precise.</h1>
+      <p>
+        My work studies how agents learn, search, and remain reliable when information is hidden
+        and other decision-makers can adapt.
+      </p>
+    </header>
+
+    <section class="archive shell" aria-label="Research projects">
+      {research.map((item, index) => (
+        <a class="archive-item" href={`/research/${item.id}/`}>
+          <div class="archive-number">R.{String(index + 1).padStart(2, '0')}</div>
+          <div>
+            <p class="archive-meta">
+              {item.data.arxivId
+                ? `${item.data.status} / arXiv:${item.data.arxivId} / ${item.data.year}`
+                : `${item.data.status} / ${item.data.year}`}
+            </p>
+            <h2>{item.data.title}</h2>
+            <p class="archive-summary">{item.data.summary}</p>
+            {item.data.authors && <p class="archive-authors">{item.data.authors.join(', ')}</p>}
+          </div>
+          <div class="archive-side">
+            <span>{item.data.topics.join(' · ')}</span>
+            <span class="archive-arrow" aria-hidden="true">↗</span>
+          </div>
+        </a>
+      ))}
+    </section>
+  </main>
+</BaseLayout>
