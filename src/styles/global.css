@@ -870,16 +870,31 @@ h1 {
   font-size: 0.82em;
 }
 
+.prose .katex-display {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0;
+}
+
+.prose .katex {
+  font-size: 1em;
+}
+
 .entry-body--with-toc {
   display: grid;
   grid-template-columns: 2fr minmax(0, 7fr) 3fr;
   gap: 28px;
   align-items: start;
+  min-width: 0;
 }
 
 .entry-body--with-toc .prose {
   grid-column: 2;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
   margin-right: 0;
   margin-left: 0;
 }
@@ -888,6 +903,8 @@ h1 {
   position: sticky;
   top: 28px;
   grid-column: 1;
+  min-width: 0;
+  max-width: 100%;
   margin-top: 72px;
   padding-top: 18px;
   border-top: 1px solid var(--ink);
@@ -1362,7 +1379,7 @@ h1 {
   }
 
   .entry-body--with-toc {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .entry-body--with-toc .entry-toc,
