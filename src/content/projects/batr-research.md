@@ -9,6 +9,7 @@ topics:
   - Search
   - Planning
 repo: https://github.com/jiaxing-guo/batr-research
+researchId: public-belief-search
 featured: false
 order: 4
 ---

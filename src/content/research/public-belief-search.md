@@ -9,6 +9,7 @@ topics:
   - Imperfect information
   - Model-guided planning
 repo: https://github.com/jiaxing-guo/batr-research
+projectId: batr-research
 featured: false
 order: 4
 ---

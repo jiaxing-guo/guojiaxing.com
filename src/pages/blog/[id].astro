@@ -2,6 +2,7 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { formatDate } from '../../utils/date';
+import { createBlogPostingSchema } from '../../utils/structuredData';
 
 export async function getStaticPaths() {
   const entries = await getCollection('blog', ({ data }) => !data.draft);
@@ -15,6 +16,15 @@ interface Props {
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const tableOfContents = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const blogPath = `/blog/${entry.id}/`;
+const structuredData = createBlogPostingSchema({
+  path: blogPath,
+  title: entry.data.title,
+  summary: entry.data.summary,
+  publishedAt: entry.data.publishedAt,
+  updatedAt: entry.data.updatedAt,
+  tags: entry.data.tags,
+});
 ---
 
 <ContentLayout
@@ -26,6 +36,9 @@ const tableOfContents = headings.filter((heading) => heading.depth === 2 || head
   backHref="/blog/"
   backLabel="All posts"
   tableOfContents={tableOfContents}
+  publishedTime={entry.data.publishedAt}
+  modifiedTime={entry.data.updatedAt}
+  structuredData={structuredData}
 >
   <Content />
 </ContentLayout>

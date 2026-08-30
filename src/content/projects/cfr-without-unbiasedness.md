@@ -8,6 +8,7 @@ topics:
   - Algorithms
   - Experiments
 repo: https://github.com/jiaxing-guo/cfr-without-unbiasedness
+researchId: cfr-without-unbiasedness
 featured: true
 order: 1
 ---

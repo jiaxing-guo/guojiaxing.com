@@ -13,6 +13,12 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const links: Array<{ label: string; href: string }> = [];
+
+if (entry.data.researchId) {
+  links.push({ label: 'Read research', href: `/research/${entry.data.researchId}/` });
+}
+links.push({ label: 'View code', href: entry.data.repo });
 ---
 
 <ContentLayout
@@ -23,7 +29,7 @@ const { Content } = await render(entry);
   topics={entry.data.topics}
   backHref="/project/"
   backLabel="All project work"
-  links={[{ label: 'View code', href: entry.data.repo }]}
+  links={links}
 >
   <Content />
 </ContentLayout>

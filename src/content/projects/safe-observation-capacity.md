@@ -9,6 +9,7 @@ topics:
   - Safe learning
   - Research tooling
 repo: https://github.com/jiaxing-guo/safe-observation-capacity
+researchId: safe-observation-capacity
 featured: true
 order: 3
 ---

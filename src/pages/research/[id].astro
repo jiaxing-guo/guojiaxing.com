@@ -1,6 +1,7 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import ContentLayout from '../../layouts/ContentLayout.astro';
+import { createScholarlyArticleSchema } from '../../utils/structuredData';
 
 export async function getStaticPaths() {
   const entries = await getCollection('research');
@@ -19,11 +20,25 @@ if (entry.data.paper) links.push({ label: 'arXiv', href: entry.data.paper });
 if (entry.data.pdf) links.push({ label: 'PDF', href: entry.data.pdf });
 if (entry.data.attachment) links.push({ label: 'Download PDF', href: entry.data.attachment });
 if (entry.data.doi) links.push({ label: 'DOI', href: entry.data.doi });
+if (entry.data.projectId) links.push({ label: 'Project', href: `/project/${entry.data.projectId}/` });
 if (entry.data.repo) links.push({ label: 'Code', href: entry.data.repo });
 
 const preprintMeta = entry.data.arxivId
   ? `${entry.data.status} / arXiv:${entry.data.arxivId}${entry.data.version ? ` ${entry.data.version}` : ''} / ${entry.data.year}`
   : `${entry.data.status} / ${entry.data.year}`;
+const researchPath = `/research/${entry.id}/`;
+const structuredData = createScholarlyArticleSchema({
+  path: researchPath,
+  title: entry.data.title,
+  summary: entry.data.summary,
+  authors: entry.data.authors,
+  submittedAt: entry.data.submittedAt,
+  revisedAt: entry.data.revisedAt,
+  arxivId: entry.data.arxivId,
+  paper: entry.data.paper,
+  doi: entry.data.doi,
+  topics: entry.data.topics,
+});
 ---
 
 <ContentLayout
@@ -36,6 +51,9 @@ const preprintMeta = entry.data.arxivId
   backHref="/research/"
   backLabel="All research"
   links={links}
+  publishedTime={entry.data.submittedAt}
+  modifiedTime={entry.data.revisedAt}
+  structuredData={structuredData}
 >
   <Content />
 </ContentLayout>

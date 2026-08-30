@@ -19,6 +19,7 @@ repo: https://github.com/jiaxing-guo/cfr-without-unbiasedness
 paper: https://arxiv.org/abs/2608.14761
 pdf: https://arxiv.org/pdf/2608.14761
 doi: https://doi.org/10.48550/arXiv.2608.14761
+projectId: cfr-without-unbiasedness
 featured: true
 order: 2
 ---

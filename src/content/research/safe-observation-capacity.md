@@ -19,6 +19,7 @@ repo: https://github.com/jiaxing-guo/safe-observation-capacity
 paper: https://arxiv.org/abs/2608.09954
 pdf: https://arxiv.org/pdf/2608.09954
 doi: https://doi.org/10.48550/arXiv.2608.09954
+projectId: safe-observation-capacity
 featured: true
 order: 1
 ---

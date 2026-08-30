@@ -682,13 +682,43 @@ h1 {
 }
 
 .blog-item {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 2fr 8fr auto;
   gap: 28px;
   align-items: start;
-  padding: 36px 0;
+  overflow: hidden;
+  padding: 36px 4px 36px 0;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
+  transition:
+    padding 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    color 180ms ease;
+}
+
+.blog-item::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--signal-soft);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.blog-item::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background: var(--signal);
+  content: '';
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 220ms ease;
 }
 
 .blog-item time {
@@ -703,11 +733,68 @@ h1 {
   font-family: var(--display);
   font-size: 38px;
   font-weight: 470;
+  transition: color 180ms ease;
 }
 
 .blog-item p {
   margin: 8px 0 0;
   color: var(--muted);
+  transition: color 180ms ease;
+}
+
+.blog-item > span {
+  align-self: center;
+  color: var(--muted);
+  font-size: 22px;
+  transition:
+    color 180ms ease,
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .blog-item:hover {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .blog-item:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .blog-item:hover::after {
+    transform: scaleY(1);
+  }
+
+  .blog-item:hover h2,
+  .blog-item:hover > span {
+    color: var(--signal);
+  }
+
+  .blog-item:hover p {
+    color: var(--ink);
+  }
+
+  .blog-item:hover > span {
+    transform: translate(4px, -4px);
+  }
+}
+
+.blog-item:focus-visible {
+  padding-right: 20px;
+  padding-left: 20px;
+  outline: 2px solid var(--signal);
+  outline-offset: -2px;
+}
+
+.blog-item:focus-visible::before,
+.blog-item:focus-visible::after {
+  transform: scale(1);
+}
+
+.blog-item:focus-visible h2,
+.blog-item:focus-visible > span {
+  color: var(--signal);
 }
 
 .empty-state {
@@ -1005,6 +1092,7 @@ h1 {
 
 .about-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 22px;
   margin-top: 52px;
   font-family: var(--sans);
