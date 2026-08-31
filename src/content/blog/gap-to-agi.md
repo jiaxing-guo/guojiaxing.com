@@ -2,10 +2,26 @@
 title: "The Gap to AGI: Learning How to Think"
 summary: General intelligence may require adapting the form of computation, not only scaling the amount of reasoning.
 publishedAt: 2026-08-27
+updatedAt: 2026-08-30
 tags:
   - Artificial intelligence
   - Adaptive computation
   - Reasoning
+image:
+  src: /images/blog/gap-to-agi-diagram.svg
+  alt: Diagram showing chess, poker, and strategic interaction moving through a shared computational manifold that reshapes into search, belief, and strategy.
+  width: 1600
+  height: 900
+  caption: Problem structure moves one shared reasoner through a computational manifold toward search, belief, or strategy. The contours are conceptual, not quantitative.
+  social:
+    src: /images/blog/gap-to-agi-og.png
+    width: 1200
+    height: 630
+    type: image/png
+  structured:
+    - /images/blog/gap-to-agi-16x9.png
+    - /images/blog/gap-to-agi-4x3.png
+    - /images/blog/gap-to-agi-square.png
 draft: false
 ---
 

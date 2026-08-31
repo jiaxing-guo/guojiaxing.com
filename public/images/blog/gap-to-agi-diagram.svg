@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">The Gap to AGI: an adaptive computational manifold</title>
+  <desc id="description">
+    Chess, poker, and strategic interaction supply different problem structures. One shared computational manifold reshapes into search, belief, and strategy before producing a decision.
+  </desc>
+
+  <defs>
+    <symbol id="chess-rook" viewBox="0 0 28 28">
+      <path d="M5 4h5v4h3V4h4v4h3V4h4v8l-3 3v7H7v-7l-3-3V4Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+      <path d="M5 22h18v4H5Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+    </symbol>
+    <symbol id="chess-pawn" viewBox="0 0 28 28">
+      <circle cx="14" cy="7" r="4.5" fill="currentColor" stroke="#151712" stroke-width="1.2" />
+      <path d="M10 12h8c0 4 2 6 4 9H6c2-3 4-5 4-9Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+      <path d="M5 21h18v4H5Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+    </symbol>
+    <symbol id="chess-bishop" viewBox="0 0 28 28">
+      <path d="M14 3c5 4 7 8 7 12 0 3-2 5-5 7h6v4H6v-4h6c-3-2-5-4-5-7 0-4 2-8 7-12Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+      <path d="m12 8 5 5" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="1.4" />
+    </symbol>
+    <symbol id="chess-king" viewBox="0 0 28 28">
+      <path d="M12 2h4v4h4v4h-4v4h-4v-4H8V6h4Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+      <path d="M7 15h14l-2 7H9Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+      <path d="M6 22h16v4H6Z" fill="currentColor" stroke="#151712" stroke-linejoin="round" stroke-width="1.2" />
+    </symbol>
+    <style>
+      text {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+      }
+      .section-label {
+        fill: #151712;
+        font-size: 21px;
+        font-weight: 750;
+        letter-spacing: 1.8px;
+      }
+      .problem-label {
+        fill: #151712;
+        font-size: 15px;
+        font-weight: 760;
+        letter-spacing: 1.1px;
+      }
+      .decision-label {
+        fill: #151712;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 1.4px;
+      }
+      .card-rank {
+        fill: #151712;
+        font-size: 19px;
+        font-weight: 800;
+      }
+      .contour {
+        fill: none;
+        stroke: #64665f;
+        stroke-dasharray: 2 8;
+        stroke-linecap: round;
+        stroke-width: 1.8;
+        opacity: 0.72;
+      }
+      .route {
+        fill: none;
+        stroke: #4056f4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 5;
+      }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f2f0e9" />
+
+  <!-- Section hierarchy -->
+  <g aria-hidden="true">
+    <text class="section-label" x="55" y="74">PROBLEM STRUCTURE</text>
+    <path d="M55 102H365" stroke="#151712" stroke-width="2" />
+
+    <text class="section-label" x="615" y="74">COMPUTATIONAL MANIFOLD</text>
+    <path d="M615 102H1150" stroke="#151712" stroke-width="2" />
+
+    <text class="section-label" x="1300" y="74">DECISION</text>
+    <path d="M1300 102H1545" stroke="#151712" stroke-width="2" />
+  </g>
+
+  <!-- Problem structure: full observability and search -->
+  <g>
+    <text class="problem-label" x="55" y="185">FULL</text>
+    <text class="problem-label" x="55" y="209">OBSERVABILITY</text>
+    <text class="problem-label" x="55" y="233">+ DEEP SEARCH</text>
+
+    <g transform="translate(235 155)">
+      <rect width="140" height="140" rx="9" fill="#fffdfa" />
+      <g fill="#e9e6dc">
+        <rect x="28" width="28" height="28" />
+        <rect x="84" width="28" height="28" />
+        <rect y="28" width="28" height="28" />
+        <rect x="56" y="28" width="28" height="28" />
+        <rect x="112" y="28" width="28" height="28" />
+        <rect x="28" y="56" width="28" height="28" />
+        <rect x="84" y="56" width="28" height="28" />
+        <rect y="84" width="28" height="28" />
+        <rect x="56" y="84" width="28" height="28" />
+        <rect x="112" y="84" width="28" height="28" />
+        <rect x="28" y="112" width="28" height="28" />
+        <rect x="84" y="112" width="28" height="28" />
+      </g>
+      <g stroke="#c5c3bb" stroke-width="1">
+        <path d="M28 0V140M56 0V140M84 0V140M112 0V140M0 28H140M0 56H140M0 84H140M0 112H140" />
+      </g>
+      <use href="#chess-rook" x="56" y="0" width="28" height="28" color="#151712" />
+      <use href="#chess-pawn" x="0" y="28" width="28" height="28" color="#151712" />
+      <use href="#chess-pawn" x="112" y="28" width="28" height="28" color="#151712" />
+      <use href="#chess-bishop" x="56" y="84" width="28" height="28" color="#fffdfa" />
+      <use href="#chess-king" x="56" y="112" width="28" height="28" color="#fffdfa" />
+      <rect width="140" height="140" rx="9" fill="none" stroke="#151712" stroke-width="3" />
+    </g>
+    <path d="M397 230H535" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <circle cx="397" cy="230" r="8" fill="#151712" />
+    <circle cx="512" cy="230" r="9" fill="#4056f4" />
+  </g>
+
+  <!-- Problem structure: hidden state and beliefs -->
+  <g>
+    <text class="problem-label" x="55" y="433">HIDDEN STATE</text>
+    <text class="problem-label" x="55" y="457">+ BELIEF UPDATES</text>
+
+    <g transform="translate(235 389)">
+      <rect width="54" height="92" rx="8" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+      <text class="card-rank" x="10" y="24">A</text>
+      <text x="27" y="62" fill="#151712" font-size="27" text-anchor="middle">♠</text>
+    </g>
+    <g transform="translate(299 389)">
+      <rect width="54" height="92" rx="8" fill="#e9e6dc" stroke="#64665f" stroke-dasharray="7 6" stroke-width="2.5" />
+      <text x="27" y="60" fill="#64665f" font-size="28" font-weight="760" text-anchor="middle">?</text>
+    </g>
+    <g transform="translate(363 389)">
+      <rect width="54" height="92" rx="8" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+      <text class="card-rank" x="10" y="24">K</text>
+      <text x="27" y="62" fill="#4056f4" font-size="27" text-anchor="middle">♥</text>
+    </g>
+    <path d="M443 450H535" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <circle cx="443" cy="450" r="8" fill="#151712" />
+    <circle cx="512" cy="450" r="9" fill="#4056f4" />
+  </g>
+
+  <!-- Problem structure: strategic interaction -->
+  <g>
+    <text class="problem-label" x="55" y="667">STRATEGIC</text>
+    <text class="problem-label" x="55" y="691">INTERACTION</text>
+
+    <path d="M210 625h78a20 20 0 0 1 20 20v23a20 20 0 0 1-20 20h-36l-25 21 5-21h-22a20 20 0 0 1-20-20v-23a20 20 0 0 1 20-20Z" fill="#fffdfa" stroke="#151712" stroke-width="3" />
+    <circle cx="228" cy="657" r="4" fill="#151712" />
+    <circle cx="249" cy="657" r="4" fill="#151712" />
+    <circle cx="270" cy="657" r="4" fill="#151712" />
+
+    <path d="M285 685h70a19 19 0 0 1 19 19v20a19 19 0 0 1-19 19h-18l5 21-24-21h-33a19 19 0 0 1-19-19v-20a19 19 0 0 1 19-19Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="3" />
+    <circle cx="305" cy="714" r="4" fill="#4056f4" />
+    <circle cx="324" cy="714" r="4" fill="#4056f4" />
+    <circle cx="343" cy="714" r="4" fill="#4056f4" />
+
+    <path d="M405 680H535" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <circle cx="405" cy="680" r="8" fill="#151712" />
+    <circle cx="512" cy="680" r="9" fill="#4056f4" />
+  </g>
+
+  <!-- One continuous computational manifold -->
+  <path
+    d="M835 112C988 95 1102 143 1137 247C1165 331 1121 394 1157 475C1201 575 1178 688 1084 758C1016 810 910 825 812 811C686 794 579 755 550 663C522 576 608 524 590 446C575 379 534 329 565 244C600 148 696 111 835 112Z"
+    fill="#f2f0e9"
+    stroke="#151712"
+    stroke-width="3"
+  />
+
+  <!-- Topographic contours encode a continuous strategy space -->
+  <g aria-hidden="true">
+    <path class="contour" d="M780 138C936 111 1074 157 1110 248C1138 322 1091 386 1125 470C1161 561 1138 668 1055 730C990 779 900 795 810 782C700 766 611 730 585 650C561 575 630 520 615 445C601 375 560 326 590 251C625 166 701 145 780 138Z" />
+    <path class="contour" d="M690 154C785 120 965 126 1040 178C1100 220 1085 290 1020 320C930 360 735 350 665 300C610 260 625 190 690 154Z" />
+    <path class="contour" d="M750 175C835 145 960 155 1005 200C1045 238 1020 285 965 305C885 335 770 315 720 275C680 240 700 190 750 175Z" />
+    <path class="contour" d="M715 370C805 335 980 345 1050 395C1110 438 1085 510 1015 545C920 590 770 570 705 520C650 478 660 398 715 370Z" />
+    <path class="contour" d="M780 392C850 365 955 378 998 420C1038 458 1015 505 965 530C895 560 805 540 765 505C730 475 738 410 780 392Z" />
+    <path class="contour" d="M690 600C790 570 1000 575 1075 628C1135 672 1100 735 1025 770C915 820 730 790 665 730C615 685 635 620 690 600Z" />
+    <path class="contour" d="M750 620C830 590 975 600 1028 642C1070 678 1042 725 985 750C900 785 790 755 735 710C695 675 708 635 750 620Z" />
+  </g>
+
+  <!-- Adaptive routes through the shared manifold -->
+  <path class="route" d="M512 230C590 230 624 209 658 233C699 262 658 300 714 323C791 355 958 353 1033 319C1084 296 1059 257 1118 242C1155 233 1186 240 1220 240" />
+  <path class="route" d="M512 450C593 450 628 421 680 430C747 442 683 500 733 531C795 569 990 563 1057 518C1106 485 1081 458 1140 446C1173 440 1197 445 1220 445" />
+  <path class="route" d="M512 680C588 680 620 624 674 616C736 607 700 674 721 727C744 783 987 788 1061 742C1116 708 1084 687 1143 680C1173 677 1198 680 1220 680" />
+
+  <!-- Search region -->
+  <g stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+    <path d="M867 170 798 214M867 170l69 44M798 214l-37 48M798 214l37 48M936 214l-37 48M936 214l37 48" fill="none" />
+    <circle cx="867" cy="170" r="8" fill="#4056f4" stroke="none" />
+    <circle cx="798" cy="214" r="7" fill="#151712" stroke="none" />
+    <circle cx="936" cy="214" r="7" fill="#151712" stroke="none" />
+    <circle cx="761" cy="262" r="6" fill="#151712" stroke="none" />
+    <circle cx="835" cy="262" r="6" fill="#151712" stroke="none" />
+    <circle cx="899" cy="262" r="6" fill="#151712" stroke="none" />
+    <circle cx="973" cy="262" r="6" fill="#151712" stroke="none" />
+    <circle cx="842" cy="292" r="4" fill="#151712" stroke="none" />
+    <circle cx="867" cy="292" r="4" fill="#151712" stroke="none" />
+    <circle cx="892" cy="292" r="4" fill="#151712" stroke="none" />
+  </g>
+
+  <!-- Belief region -->
+  <g>
+    <path d="M765 510H980" stroke="#151712" stroke-linecap="round" stroke-width="3" />
+    <path d="M785 510C810 509 818 386 873 386S936 509 961 510Z" fill="#cdd3ff" stroke="#4056f4" stroke-width="4" />
+    <path d="M873 374V510" stroke="#151712" stroke-dasharray="8 8" stroke-width="2.5" />
+    <path d="M873 373v-17m0 0-5 8m5-8 5 8" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+  </g>
+
+  <!-- Strategic interaction region -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M787 710 844 626 933 596 998 664 920 738ZM844 626l76 112M933 596l-13 142M787 710l211-46M844 626l154 38" fill="none" stroke="#151712" stroke-width="2.2" />
+    <path d="M787 710 933 596M844 626l76 112" fill="none" stroke="#151712" stroke-dasharray="7 7" stroke-width="2.2" />
+    <circle cx="787" cy="710" r="11" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <circle cx="844" cy="626" r="11" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <circle cx="933" cy="596" r="11" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <circle cx="998" cy="664" r="11" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <circle cx="920" cy="738" r="11" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <circle cx="902" cy="671" r="9" fill="#4056f4" stroke="#151712" stroke-width="2" />
+  </g>
+
+  <!-- Decisions -->
+  <g>
+    <path d="M1220 240H1292" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <circle cx="1220" cy="240" r="9" fill="#4056f4" />
+    <circle cx="1292" cy="240" r="7" fill="#151712" />
+    <circle cx="1370" cy="240" r="58" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <path d="M1370 207 1343 234M1370 207l27 27M1343 234l-17 29M1343 234l17 29M1397 234l-17 29M1397 234l17 29" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" />
+    <circle cx="1370" cy="207" r="7" fill="#4056f4" />
+    <circle cx="1343" cy="234" r="6" fill="#151712" />
+    <circle cx="1397" cy="234" r="6" fill="#151712" />
+    <circle cx="1326" cy="263" r="5" fill="#151712" />
+    <circle cx="1360" cy="263" r="5" fill="#151712" />
+    <circle cx="1380" cy="263" r="5" fill="#151712" />
+    <circle cx="1414" cy="263" r="5" fill="#151712" />
+    <text class="decision-label" x="1450" y="246">SEARCH</text>
+
+    <path d="M1220 445H1292" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <circle cx="1220" cy="445" r="9" fill="#4056f4" />
+    <circle cx="1292" cy="445" r="7" fill="#151712" />
+    <circle cx="1370" cy="445" r="58" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <path d="M1328 468H1412" stroke="#151712" stroke-linecap="round" stroke-width="2.5" />
+    <path d="M1338 468C1348 468 1352 407 1370 407S1392 468 1402 468Z" fill="#cdd3ff" stroke="#4056f4" stroke-width="3" />
+    <path d="M1370 401V468" stroke="#151712" stroke-dasharray="5 5" stroke-width="2" />
+    <text class="decision-label" x="1450" y="451">BELIEF</text>
+
+    <path d="M1220 680H1292" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <circle cx="1220" cy="680" r="9" fill="#4056f4" />
+    <circle cx="1292" cy="680" r="7" fill="#151712" />
+    <circle cx="1370" cy="680" r="58" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <path d="M1334 654h43a13 13 0 0 1 13 13v11a13 13 0 0 1-13 13h-18l-13 11 3-11h-15a13 13 0 0 1-13-13v-11a13 13 0 0 1 13-13Z" fill="#f2f0e9" stroke="#151712" stroke-width="2.5" />
+    <path d="M1363 672h39a12 12 0 0 1 12 12v9a12 12 0 0 1-12 12h-12l3 11-13-11h-17a12 12 0 0 1-12-12v-9a12 12 0 0 1 12-12Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="2.5" />
+    <text class="decision-label" x="1450" y="686">STRATEGY</text>
+  </g>
+</svg>
