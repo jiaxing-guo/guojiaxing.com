@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Guo Jiaxing">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#f2f0e9" />
+  <path
+    d="M10 16h11l15 16M10 48h11l15-16M36 32h18"
+    fill="none"
+    stroke="#151712"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="8"
+  />
+  <circle cx="36" cy="32" r="5.5" fill="#4056f4" />
+</svg>
