@@ -4,6 +4,13 @@ export const site = {
   description:
     'Research on reliable decision-making, strategic interaction, and computational game theory.',
   url: 'https://guojiaxing.com',
+  socialImage: {
+    src: '/og.png',
+    alt: 'Guo Jiaxing — Research & Engineering',
+    width: 1200,
+    height: 630,
+    type: 'image/png',
+  },
   alternateName: 'Jiaxing Guo',
   email: 'jiaxing.guo11@outlook.com',
   github: 'https://github.com/jiaxing-guo',

@@ -6,6 +6,21 @@ tags:
   - Game theory
   - Active learning
   - Poker
+image:
+  src: /images/blog/the-price-of-seeing-diagram.svg
+  alt: Diagram comparing passive poker observation, which hides folded hands and produces a biased estimate, with safe exploration, which reveals the missing evidence while preserving a safety floor.
+  width: 1600
+  height: 900
+  caption: Passive observation can become precisely wrong because folds censor private cards. Safe exploration changes what becomes visible while preserving a value floor.
+  social:
+    src: /images/blog/the-price-of-seeing-og.png
+    width: 1200
+    height: 630
+    type: image/png
+  structured:
+    - /images/blog/the-price-of-seeing-16x9.png
+    - /images/blog/the-price-of-seeing-4x3.png
+    - /images/blog/the-price-of-seeing-square.png
 draft: false
 ---
 

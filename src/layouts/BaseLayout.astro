@@ -5,17 +5,20 @@ import '../styles/global.css';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { site } from '../data/site';
+import type { SocialImage } from '../types/media';
 import type { StructuredData } from '../utils/structuredData';
 
 interface Props {
   title?: string;
   description?: string;
   path?: string;
-  socialImage?: string | null;
+  socialImage?: SocialImage | null;
   type?: 'website' | 'article';
   noindex?: boolean;
   publishedTime?: Date;
   modifiedTime?: Date;
+  articleSection?: string;
+  articleTags?: string[];
   structuredData?: StructuredData | StructuredData[];
 }
 
@@ -23,16 +26,18 @@ const {
   title = site.title,
   description = site.description,
   path = Astro.url.pathname,
-  socialImage = '/og.png',
+  socialImage = site.socialImage,
   type = 'website',
   noindex = false,
   publishedTime,
   modifiedTime,
+  articleSection,
+  articleTags = [],
   structuredData,
 } = Astro.props;
 
 const canonical = new URL(path, site.url);
-const imageUrl = socialImage ? new URL(socialImage, site.url) : null;
+const imageUrl = socialImage ? new URL(socialImage.src, site.url) : null;
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -88,14 +93,32 @@ const pageSchemas = structuredData
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+    {imageUrl && socialImage && (
+      <>
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:image:secure_url" content={imageUrl} />
+        <meta property="og:image:type" content={socialImage.type} />
+        <meta property="og:image:width" content={String(socialImage.width)} />
+        <meta property="og:image:height" content={String(socialImage.height)} />
+        <meta property="og:image:alt" content={socialImage.alt} />
+      </>
+    )}
     {type === 'article' && <meta property="article:author" content={site.url} />}
     {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
     {modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+    {type === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
+    {type === 'article' && articleTags.map((tag) => <meta property="article:tag" content={tag} />)}
     <meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+    {imageUrl && socialImage && (
+      <>
+        <meta name="twitter:image" content={imageUrl} />
+        <meta name="twitter:image:alt" content={socialImage.alt} />
+      </>
+    )}
     <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     {pageSchemas.map((schema) => (
       <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

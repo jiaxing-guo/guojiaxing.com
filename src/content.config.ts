@@ -2,6 +2,21 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
+const contentImage = z.object({
+  src: z.string().startsWith('/'),
+  alt: z.string(),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  caption: z.string().optional(),
+  social: z.object({
+    src: z.string().startsWith('/'),
+    width: z.number().int().positive(),
+    height: z.number().int().positive(),
+    type: z.string().startsWith('image/'),
+  }),
+  structured: z.array(z.string().startsWith('/')).min(1),
+});
+
 const research = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/research' }),
   schema: z.object({
@@ -51,6 +66,7 @@ const blog = defineCollection({
     publishedAt: z.coerce.date(),
     updatedAt: z.coerce.date().optional(),
     tags: z.array(z.string()),
+    image: contentImage.optional(),
     draft: z.boolean().default(false),
   }),
 });

@@ -25,8 +25,10 @@ export function createBlogPostingSchema(input: {
   publishedAt: Date;
   updatedAt?: Date;
   tags: string[];
+  images?: string[];
 }): StructuredData {
   const url = new URL(input.path, site.url).href;
+  const images = input.images?.map((path) => new URL(path, site.url).href);
 
   return {
     '@context': 'https://schema.org',
@@ -38,6 +40,7 @@ export function createBlogPostingSchema(input: {
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     datePublished: input.publishedAt.toISOString(),
     ...(input.updatedAt ? { dateModified: input.updatedAt.toISOString() } : {}),
+    ...(images && images.length > 0 ? { image: images } : {}),
     author: personReference(),
     keywords: input.tags,
     inLanguage: 'en',

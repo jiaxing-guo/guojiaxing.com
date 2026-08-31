@@ -17,6 +17,24 @@ const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const tableOfContents = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 const blogPath = `/blog/${entry.id}/`;
+const heroImage = entry.data.image
+  ? {
+      src: entry.data.image.src,
+      alt: entry.data.image.alt,
+      width: entry.data.image.width,
+      height: entry.data.image.height,
+      caption: entry.data.image.caption,
+    }
+  : undefined;
+const socialImage = entry.data.image
+  ? {
+      src: entry.data.image.social.src,
+      alt: entry.data.image.alt,
+      width: entry.data.image.social.width,
+      height: entry.data.image.social.height,
+      type: entry.data.image.social.type,
+    }
+  : null;
 const structuredData = createBlogPostingSchema({
   path: blogPath,
   title: entry.data.title,
@@ -24,6 +42,7 @@ const structuredData = createBlogPostingSchema({
   publishedAt: entry.data.publishedAt,
   updatedAt: entry.data.updatedAt,
   tags: entry.data.tags,
+  images: entry.data.image?.structured,
 });
 ---
 
@@ -36,6 +55,8 @@ const structuredData = createBlogPostingSchema({
   backHref="/blog/"
   backLabel="All posts"
   tableOfContents={tableOfContents}
+  heroImage={heroImage}
+  socialImage={socialImage}
   publishedTime={entry.data.publishedAt}
   modifiedTime={entry.data.updatedAt}
   structuredData={structuredData}
