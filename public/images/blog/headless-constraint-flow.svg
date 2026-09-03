@@ -7,6 +7,9 @@
     <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
     </marker>
+    <marker id="arrow-blue-small" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
+    </marker>
     <style>
       text { font-family: "Helvetica Neue", Arial, sans-serif; }
       .heading { fill: #151712; font-size: 24px; font-weight: 820; letter-spacing: 2px; }
@@ -71,8 +74,8 @@
     <path d="m765 467 18 18 35-43" fill="none" stroke="#4056f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" />
 
     <path d="M697 579H903" stroke="#c5c3bb" stroke-dasharray="3 9" stroke-linecap="round" stroke-width="3" />
-    <path d="M847 676a69 69 0 1 1 9-93" fill="none" marker-end="url(#arrow-blue)" stroke="#4056f4" stroke-linecap="round" stroke-width="9" />
-    <path d="M800 615v46h43" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" />
+    <path d="M839 689A55 55 0 1 1 847 621" fill="none" marker-end="url(#arrow-blue-small)" stroke="#4056f4" stroke-linecap="round" stroke-width="9" />
+    <path d="M800 616V650H835" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" />
   </g>
 
   <!-- AMPLIFY: expanding authority -->
@@ -101,16 +104,16 @@
   <g>
     <path d="m1196 717 33-57 33 57Z" fill="#f2f0e9" stroke="#4056f4" stroke-linejoin="round" stroke-width="5" />
     <path d="M1229 679v16m0 9v1" stroke="#151712" stroke-linecap="round" stroke-width="5" />
-    <path d="M1262 695 1326 650M1262 695l64 45M1326 650l80-34M1326 650l80 34M1326 740l80-34M1326 740l80 34" fill="none" stroke="#4056f4" stroke-dasharray="5 7" stroke-width="4" />
+    <path d="M1262 695 1326 650M1262 695l64 65M1326 650l80-40M1326 650l80 30M1326 760l80-30M1326 760l80 40" fill="none" stroke="#4056f4" stroke-dasharray="5 7" stroke-width="4" />
     <g fill="#f2f0e9" stroke="#151712" stroke-width="4">
-      <circle cx="1326" cy="650" r="17" /><circle cx="1326" cy="740" r="17" />
-      <circle cx="1406" cy="616" r="17" /><circle cx="1406" cy="684" r="17" />
-      <circle cx="1406" cy="706" r="17" /><circle cx="1406" cy="774" r="17" />
+      <circle cx="1326" cy="650" r="17" /><circle cx="1326" cy="760" r="17" />
+      <circle cx="1406" cy="610" r="17" /><circle cx="1406" cy="680" r="17" />
+      <circle cx="1406" cy="730" r="17" /><circle cx="1406" cy="800" r="17" />
     </g>
-    <path d="M1423 616H1490M1423 684H1490M1423 706H1490M1423 774H1490" stroke="#4056f4" stroke-dasharray="5 7" stroke-width="4" />
+    <path d="M1423 610H1490M1423 680H1490M1423 730H1490M1423 800H1490" stroke="#4056f4" stroke-dasharray="5 7" stroke-width="4" />
     <g fill="#f2f0e9" stroke="#4056f4" stroke-width="4">
-      <circle cx="1507" cy="616" r="17" /><circle cx="1507" cy="684" r="17" />
-      <circle cx="1507" cy="706" r="17" /><circle cx="1507" cy="774" r="17" />
+      <circle cx="1507" cy="610" r="17" /><circle cx="1507" cy="680" r="17" />
+      <circle cx="1507" cy="730" r="17" /><circle cx="1507" cy="800" r="17" />
     </g>
   </g>
 

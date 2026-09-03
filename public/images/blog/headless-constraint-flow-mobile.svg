@@ -4,7 +4,10 @@
     A vertical flow shows fixed interfaces and handoffs being removed, complexity relocating into authorization, evaluation, and recovery, then authority, hidden errors, and failures becoming amplified.
   </desc>
   <defs>
-    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="10" refY="5" markerUnits="userSpaceOnUse" markerWidth="18" markerHeight="18" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
+    </marker>
+    <marker id="arrow-blue-small" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto">
       <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
     </marker>
     <style>
@@ -37,18 +40,20 @@
   <circle cx="360" cy="617" r="67" fill="#f2f0e9" stroke="#151712" stroke-width="4" />
   <circle cx="350" cy="607" r="29" fill="none" stroke="#151712" stroke-width="5" /><path d="M371 628l25 25" stroke="#151712" stroke-linecap="round" stroke-width="9" /><path d="m334 607 11 11 23-28" fill="none" stroke="#4056f4" stroke-linecap="round" stroke-width="6" />
   <circle cx="546" cy="617" r="67" fill="#f2f0e9" stroke="#151712" stroke-width="4" />
-  <path d="M576 649a43 43 0 1 1 5-58" fill="none" marker-end="url(#arrow-blue)" stroke="#4056f4" stroke-width="7" /><path d="M546 592v35h31" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="6" />
+  <path d="M576 650A42 42 0 1 1 580 595" fill="none" marker-end="url(#arrow-blue-small)" stroke="#4056f4" stroke-width="7" /><path d="M546 595v25h26" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="6" />
   <path class="blue" d="M360 756V795" marker-end="url(#arrow-blue)" />
 
   <text class="heading" x="38" y="839">AMPLIFY</text><path d="M38 860H682" stroke="#151712" stroke-width="2" />
   <circle cx="124" cy="947" r="23" fill="#4056f4" /><circle cx="124" cy="939" r="7" fill="#fff" /><path d="M113 961c3-14 19-14 22 0" fill="none" stroke="#fff" stroke-width="5" />
   <circle cx="124" cy="947" r="48" fill="none" stroke="#4056f4" stroke-dasharray="4 7" stroke-width="3" /><circle cx="124" cy="947" r="73" fill="none" stroke="#4056f4" stroke-dasharray="4 9" stroke-width="3" />
-  <path class="blue" d="M124 868v22M203 947h22M45 947H23" marker-end="url(#arrow-blue)" />
+  <path class="blue" d="M124 890V868" marker-end="url(#arrow-blue)" />
+  <path class="blue" d="M197 947H225" marker-end="url(#arrow-blue)" />
+  <path class="blue" d="M51 947H23" marker-end="url(#arrow-blue)" />
 
   <rect x="266" y="900" width="188" height="69" rx="16" fill="#fffdfa" stroke="#151712" stroke-width="4" /><circle cx="291" cy="923" r="5" fill="#151712" /><circle cx="308" cy="923" r="5" fill="#151712" /><circle cx="325" cy="923" r="5" fill="#151712" /><path d="M391 923H431" stroke="#151712" stroke-linecap="round" stroke-width="4" />
   <rect x="266" y="981" width="188" height="50" fill="none" stroke="#4056f4" stroke-dasharray="7 7" stroke-width="4" /><path d="m360 987 18 31h-36Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="4" /><path d="M360 996v9m0 6v1" stroke="#151712" stroke-linecap="round" stroke-width="4" />
 
   <path d="m495 1014 24-42 24 42Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="4" /><path d="M519 986v12m0 7v1" stroke="#151712" stroke-linecap="round" stroke-width="4" />
-  <path d="M543 996 582 968M543 996l39 28M582 968l43-20M582 968l43 20M582 1024l43-20M582 1024l43 20" fill="none" stroke="#4056f4" stroke-dasharray="4 6" stroke-width="3" />
-  <g fill="#f2f0e9" stroke="#151712" stroke-width="3"><circle cx="582" cy="968" r="12" /><circle cx="582" cy="1024" r="12" /><circle cx="625" cy="948" r="12" /><circle cx="625" cy="988" r="12" /><circle cx="625" cy="1004" r="12" /><circle cx="625" cy="1044" r="12" /></g>
+  <path d="M543 996 578 960M543 996l35 34M578 960l47-20M578 960l47 20M578 1030l47-20M578 1030l47 20" fill="none" stroke="#4056f4" stroke-dasharray="4 6" stroke-width="3" />
+  <g fill="#f2f0e9" stroke="#151712" stroke-width="3"><circle cx="578" cy="960" r="12" /><circle cx="578" cy="1030" r="12" /><circle cx="625" cy="940" r="12" /><circle cx="625" cy="980" r="12" /><circle cx="625" cy="1010" r="12" /><circle cx="625" cy="1050" r="12" /></g>
 </svg>
