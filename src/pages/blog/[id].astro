@@ -48,6 +48,7 @@ const structuredData = createBlogPostingSchema({
 
 <ContentLayout
   title={entry.data.title}
+  pageTitle={entry.data.seoTitle}
   summary={entry.data.summary}
   eyebrow="Blog"
   meta={formatDate(entry.data.publishedAt)}

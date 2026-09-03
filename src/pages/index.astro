@@ -1,6 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { site } from '../data/site';
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': new URL('/#website', site.url).href,
+  url: new URL('/', site.url).href,
+  name: site.name,
+  alternateName: site.alternateName,
+};
 
 const selectedResearch = (await getCollection('research'))
   .filter((item) => item.data.featured)
@@ -15,7 +25,7 @@ const latestBlogPost = (await getCollection('blog', ({ data }) => !data.draft)).
 )[0];
 ---
 
-<BaseLayout>
+<BaseLayout structuredData={websiteSchema}>
   <main id="main-content">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">

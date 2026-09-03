@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Conceptual benchmark version-transfer matrix</title>
+  <desc id="description">
+    Rows represent frozen model-and-harness systems and columns represent benchmark versions. A broad capability update stays strong across versions, while benchmark-specific updates create local diagonal spikes.
+  </desc>
+
+  <defs>
+    <style>
+      text { font-family: "Helvetica Neue", Arial, sans-serif; }
+      .section-label { fill: #151712; font-size: 21px; font-weight: 750; letter-spacing: 1.8px; }
+      .row-id { fill: #4056f4; font-size: 16px; font-weight: 850; letter-spacing: 1.2px; }
+      .row-name { fill: #151712; font-size: 18px; font-weight: 800; letter-spacing: .8px; }
+      .micro { fill: #64665f; font-size: 14px; font-weight: 750; letter-spacing: 1px; }
+      .column { fill: #151712; font-size: 18px; font-weight: 820; letter-spacing: 1px; }
+      .cell { stroke: #151712; stroke-width: 2.5; }
+      .signature { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f2f0e9" />
+
+  <g aria-hidden="true">
+    <text class="section-label" x="60" y="76">FROZEN SYSTEMS</text>
+    <path d="M60 103H380" stroke="#151712" stroke-width="2" />
+    <text class="section-label" x="430" y="76">BENCHMARK VERSIONS</text>
+    <path d="M430 103H1125" stroke="#151712" stroke-width="2" />
+    <text class="section-label" x="1195" y="76">TRANSFER SIGNATURE</text>
+    <path d="M1195 103H1540" stroke="#151712" stroke-width="2" />
+  </g>
+
+  <rect x="430" y="130" width="110" height="36" rx="11" fill="#64665f" />
+  <text x="485" y="154" fill="#fff" font-size="12" font-weight="850" letter-spacing="1.1" text-anchor="middle">CONCEPTUAL</text>
+
+  <g>
+    <text class="micro" x="590" y="155">EARLIER</text>
+    <path d="M680 150H1040" stroke="#64665f" stroke-linecap="round" stroke-width="2.5" />
+    <path d="m1040 150-13-7v14Z" fill="#64665f" />
+    <text class="micro" x="1055" y="155">LATER</text>
+
+    <text class="column" x="480" y="206" text-anchor="middle">B1</text>
+    <text class="column" x="610" y="206" text-anchor="middle">B2</text>
+    <text class="column" x="740" y="206" text-anchor="middle">B3</text>
+    <text class="column" x="870" y="206" text-anchor="middle">B4</text>
+    <text class="column" x="1000" y="206" text-anchor="middle">B5</text>
+  </g>
+
+  <g>
+    <rect x="60" y="230" width="320" height="82" rx="19" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <text class="row-id" x="86" y="264">M0</text>
+    <text class="row-name" x="86" y="291">BASELINE</text>
+
+    <rect x="60" y="334" width="320" height="82" rx="19" fill="#fffdfa" stroke="#4056f4" stroke-width="3" />
+    <text class="row-id" x="86" y="368">M1</text>
+    <text class="row-name" x="86" y="395">BROAD CAPABILITY UPDATE</text>
+
+    <rect x="60" y="438" width="320" height="82" rx="19" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <text class="row-id" x="86" y="472">M2</text>
+    <text class="row-name" x="86" y="499">TUNED FOR B2</text>
+
+    <rect x="60" y="542" width="320" height="82" rx="19" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <text class="row-id" x="86" y="576">M3</text>
+    <text class="row-name" x="86" y="603">TUNED FOR B3</text>
+
+    <rect x="60" y="646" width="320" height="82" rx="19" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <text class="row-id" x="86" y="680">M4</text>
+    <text class="row-name" x="86" y="707">TUNED FOR B4</text>
+  </g>
+
+  <g>
+    <rect class="cell" x="430" y="230" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="560" y="230" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="690" y="230" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="820" y="230" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="950" y="230" width="100" height="82" rx="16" fill="#e9e6dc" />
+
+    <rect class="cell" x="430" y="334" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="560" y="334" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="690" y="334" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="820" y="334" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="950" y="334" width="100" height="82" rx="16" fill="#4056f4" />
+
+    <rect class="cell" x="430" y="438" width="100" height="82" rx="16" fill="#cdd3ff" />
+    <rect class="cell" x="560" y="438" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="690" y="438" width="100" height="82" rx="16" fill="#dfe2ff" />
+    <rect class="cell" x="820" y="438" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="950" y="438" width="100" height="82" rx="16" fill="#e9e6dc" />
+
+    <rect class="cell" x="430" y="542" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="560" y="542" width="100" height="82" rx="16" fill="#cdd3ff" />
+    <rect class="cell" x="690" y="542" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="820" y="542" width="100" height="82" rx="16" fill="#cdd3ff" />
+    <rect class="cell" x="950" y="542" width="100" height="82" rx="16" fill="#e9e6dc" />
+
+    <rect class="cell" x="430" y="646" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="560" y="646" width="100" height="82" rx="16" fill="#e9e6dc" />
+    <rect class="cell" x="690" y="646" width="100" height="82" rx="16" fill="#cdd3ff" />
+    <rect class="cell" x="820" y="646" width="100" height="82" rx="16" fill="#4056f4" />
+    <rect class="cell" x="950" y="646" width="100" height="82" rx="16" fill="#cdd3ff" />
+  </g>
+
+  <g>
+    <path class="signature" d="M1210 281H1515" stroke="#64665f" />
+    <circle cx="1260" cy="281" r="7" fill="#64665f" />
+    <circle cx="1360" cy="281" r="7" fill="#64665f" />
+    <circle cx="1460" cy="281" r="7" fill="#64665f" />
+    <text class="micro" x="1360" y="306" text-anchor="middle">BASELINE</text>
+
+    <path class="signature" d="M1210 374H1515" stroke="#4056f4" />
+    <circle cx="1260" cy="374" r="9" fill="#4056f4" />
+    <circle cx="1360" cy="374" r="9" fill="#4056f4" />
+    <circle cx="1460" cy="374" r="9" fill="#4056f4" />
+    <text x="1360" y="404" fill="#4056f4" font-size="14" font-weight="850" letter-spacing="1.1" text-anchor="middle">BROAD TRANSFER</text>
+
+    <path class="signature" d="M1210 504H1270L1320 455 1370 504H1515" stroke="#151712" />
+    <circle cx="1320" cy="455" r="9" fill="#4056f4" />
+
+    <path class="signature" d="M1210 608H1310L1360 559 1410 608H1515" stroke="#151712" />
+    <circle cx="1360" cy="559" r="9" fill="#4056f4" />
+
+    <path class="signature" d="M1210 712H1350L1400 663 1450 712H1515" stroke="#151712" />
+    <circle cx="1400" cy="663" r="9" fill="#4056f4" />
+    <rect x="1288" y="738" width="160" height="40" rx="13" fill="#151712" />
+    <text x="1368" y="764" fill="#fff" font-size="13" font-weight="850" letter-spacing="1" text-anchor="middle">VERSION-LOCAL</text>
+  </g>
+
+  <g>
+    <rect x="430" y="770" width="28" height="28" rx="7" fill="#e9e6dc" stroke="#151712" stroke-width="2" />
+    <text class="micro" x="470" y="790">LOWER RELATIVE PERFORMANCE</text>
+    <rect x="760" y="770" width="28" height="28" rx="7" fill="#4056f4" stroke="#151712" stroke-width="2" />
+    <text class="micro" x="800" y="790">HIGHER RELATIVE PERFORMANCE</text>
+
+    <path d="M60 842H1540" stroke="#4056f4" stroke-linecap="round" stroke-width="4" />
+    <rect x="398" y="812" width="804" height="60" rx="20" fill="#f2f0e9" stroke="#4056f4" stroke-width="3" />
+    <text x="800" y="849" fill="#4056f4" font-size="17" font-weight="850" letter-spacing="1.25" text-anchor="middle">BROAD ROW = TRANSFER · DIAGONAL SPIKE = SPECIALIZATION</text>
+  </g>
+</svg>

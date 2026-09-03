@@ -6,6 +6,7 @@ import type { StructuredData } from '../utils/structuredData';
 
 interface Props {
   title: string;
+  pageTitle?: string;
   summary: string;
   eyebrow: string;
   meta: string;
@@ -24,6 +25,7 @@ interface Props {
 
 const {
   title,
+  pageTitle,
   summary,
   eyebrow,
   meta,
@@ -42,7 +44,7 @@ const {
 ---
 
 <BaseLayout
-  title={`${title} — Guo Jiaxing`}
+  title={`${pageTitle ?? title} — Guo Jiaxing`}
   description={summary}
   socialImage={socialImage}
   type="article"

@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Four sources of an improved public benchmark score</title>
+  <desc id="description">
+    Capability improvement, benchmark specialization, harness engineering, and measurement exploitation can all increase a public score, but their transfer and interpretation differ.
+  </desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#151712" />
+    </marker>
+    <style>
+      text { font-family: "Helvetica Neue", Arial, sans-serif; }
+      .section-label { fill: #151712; font-size: 21px; font-weight: 750; letter-spacing: 1.8px; }
+      .mechanism { fill: #151712; font-size: 17px; font-weight: 850; letter-spacing: 1px; }
+      .detail { fill: #64665f; font-size: 14px; font-weight: 700; letter-spacing: .45px; }
+      .formula { fill: #151712; font-size: 23px; font-weight: 780; }
+      .meaning { fill: #151712; font-size: 16px; font-weight: 850; letter-spacing: 1px; }
+      .flow { fill: none; stroke: #151712; stroke-linecap: round; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f2f0e9" />
+
+  <g aria-hidden="true">
+    <text class="section-label" x="60" y="76">WHAT CHANGED?</text>
+    <path d="M60 103H445" stroke="#151712" stroke-width="2" />
+    <text class="section-label" x="520" y="76">SAME OBSERVATION</text>
+    <path d="M520 103H795" stroke="#151712" stroke-width="2" />
+    <text class="section-label" x="870" y="76">TRANSFER / ATTRIBUTION</text>
+    <path d="M870 103H1210" stroke="#151712" stroke-width="2" />
+    <text class="section-label" x="1280" y="76">INTERPRETATION</text>
+    <path d="M1280 103H1540" stroke="#151712" stroke-width="2" />
+  </g>
+
+  <g>
+    <rect x="60" y="158" width="385" height="126" rx="23" fill="#fffdfa" stroke="#4056f4" stroke-width="3" />
+    <circle cx="102" cy="221" r="22" fill="#4056f4" />
+    <path d="m91 222 8 8 15-20" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+    <text class="mechanism" x="142" y="205">CAPABILITY IMPROVEMENT</text>
+    <text class="detail" x="142" y="235">Better planning, coding, debugging,</text>
+    <text class="detail" x="142" y="258">or tool use on unfamiliar tasks</text>
+
+    <path class="flow" d="M445 221H535" marker-end="url(#arrow)" />
+    <rect x="555" y="177" width="220" height="88" rx="22" fill="#4056f4" />
+    <text x="665" y="213" fill="#fff" font-size="15" font-weight="850" letter-spacing="1.1" text-anchor="middle">PUBLIC SCORE</text>
+    <text x="665" y="246" fill="#fff" font-size="30" font-weight="800" text-anchor="middle">+ΔS<tspan baseline-shift="sub" font-size="17">B</tspan></text>
+
+    <path class="flow" d="M775 221H855" marker-end="url(#arrow)" />
+    <rect x="875" y="177" width="315" height="88" rx="22" fill="#fffdfa" stroke="#4056f4" stroke-width="3" />
+    <text class="formula" x="1032" y="215" text-anchor="middle">ΔU ≈ ΔS<tspan baseline-shift="sub" font-size="15">B</tspan></text>
+    <text x="1032" y="243" fill="#4056f4" font-size="13" font-weight="850" letter-spacing="1" text-anchor="middle">GAIN SURVIVES TRANSFER</text>
+
+    <path class="flow" d="M1190 221H1265" marker-end="url(#arrow)" />
+    <rect x="1285" y="177" width="255" height="88" rx="22" fill="#151712" />
+    <text x="1412" y="213" fill="#fff" font-size="16" font-weight="850" letter-spacing="1" text-anchor="middle">BROAD</text>
+    <text x="1412" y="239" fill="#cdd3ff" font-size="16" font-weight="850" letter-spacing="1" text-anchor="middle">CAPABILITY GAIN</text>
+  </g>
+
+  <g>
+    <rect x="60" y="316" width="385" height="126" rx="23" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <circle cx="102" cy="379" r="22" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <path d="M90 391 114 367M90 367l24 24" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+    <text class="mechanism" x="142" y="363">BENCHMARK SPECIALIZATION</text>
+    <text class="detail" x="142" y="393">Learns recurring task forms, packages,</text>
+    <text class="detail" x="142" y="416">or verifier expectations</text>
+
+    <path class="flow" d="M445 379H535" marker-end="url(#arrow)" />
+    <rect x="555" y="335" width="220" height="88" rx="22" fill="#4056f4" />
+    <text x="665" y="371" fill="#fff" font-size="15" font-weight="850" letter-spacing="1.1" text-anchor="middle">PUBLIC SCORE</text>
+    <text x="665" y="404" fill="#fff" font-size="30" font-weight="800" text-anchor="middle">+ΔS<tspan baseline-shift="sub" font-size="17">B</tspan></text>
+
+    <path class="flow" d="M775 379H855" marker-end="url(#arrow)" />
+    <rect x="875" y="335" width="315" height="88" rx="22" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <text class="formula" x="1032" y="373" text-anchor="middle">ΔU &lt; ΔS<tspan baseline-shift="sub" font-size="15">B</tspan></text>
+    <text class="detail" x="1032" y="401" text-anchor="middle">GAIN FADES ON NEW TASKS</text>
+
+    <path class="flow" d="M1190 379H1265" marker-end="url(#arrow)" />
+    <rect x="1285" y="335" width="255" height="88" rx="22" fill="#f2f0e9" stroke="#151712" stroke-width="2.5" />
+    <text class="meaning" x="1412" y="371" text-anchor="middle">DISTRIBUTION-</text>
+    <text class="meaning" x="1412" y="397" text-anchor="middle">LOCAL GAIN</text>
+  </g>
+
+  <g>
+    <rect x="60" y="474" width="385" height="126" rx="23" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <circle cx="102" cy="537" r="22" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <path d="M87 537h30M102 522v30" stroke="#4056f4" stroke-linecap="round" stroke-width="4" />
+    <text class="mechanism" x="142" y="521">HARNESS ENGINEERING</text>
+    <text class="detail" x="142" y="551">Better prompts, tools, memory, retries,</text>
+    <text class="detail" x="142" y="574">or execution budgets</text>
+
+    <path class="flow" d="M445 537H535" marker-end="url(#arrow)" />
+    <rect x="555" y="493" width="220" height="88" rx="22" fill="#4056f4" />
+    <text x="665" y="529" fill="#fff" font-size="15" font-weight="850" letter-spacing="1.1" text-anchor="middle">PUBLIC SCORE</text>
+    <text x="665" y="562" fill="#fff" font-size="30" font-weight="800" text-anchor="middle">+ΔS<tspan baseline-shift="sub" font-size="17">B</tspan></text>
+
+    <path class="flow" d="M775 537H855" marker-end="url(#arrow)" />
+    <rect x="875" y="493" width="315" height="88" rx="22" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <text class="formula" x="1032" y="531" text-anchor="middle">M = (θ, A)</text>
+    <text class="detail" x="1032" y="559" text-anchor="middle">ATTRIBUTE MODEL AND SCAFFOLD</text>
+
+    <path class="flow" d="M1190 537H1265" marker-end="url(#arrow)" />
+    <rect x="1285" y="493" width="255" height="88" rx="22" fill="#f2f0e9" stroke="#151712" stroke-width="2.5" />
+    <text class="meaning" x="1412" y="529" text-anchor="middle">SYSTEM-LEVEL</text>
+    <text class="meaning" x="1412" y="555" text-anchor="middle">GAIN</text>
+  </g>
+
+  <g>
+    <rect x="60" y="632" width="385" height="126" rx="23" fill="#fffdfa" stroke="#151712" stroke-width="2.5" />
+    <circle cx="102" cy="695" r="22" fill="#f2f0e9" stroke="#151712" stroke-width="3" />
+    <path d="M88 707 116 679M88 679l28 28" stroke="#64665f" stroke-linecap="round" stroke-width="4" />
+    <text class="mechanism" x="142" y="679">MEASUREMENT EXPLOIT</text>
+    <text class="detail" x="142" y="709">Finds public solutions, verifier gaps,</text>
+    <text class="detail" x="142" y="732">or privileged benchmark information</text>
+
+    <path class="flow" d="M445 695H535" marker-end="url(#arrow)" />
+    <rect x="555" y="651" width="220" height="88" rx="22" fill="#4056f4" />
+    <text x="665" y="687" fill="#fff" font-size="15" font-weight="850" letter-spacing="1.1" text-anchor="middle">PUBLIC SCORE</text>
+    <text x="665" y="720" fill="#fff" font-size="30" font-weight="800" text-anchor="middle">+ΔS<tspan baseline-shift="sub" font-size="17">B</tspan></text>
+
+    <path class="flow" d="M775 695H855" marker-end="url(#arrow)" />
+    <rect x="875" y="651" width="315" height="88" rx="22" fill="#fffdfa" stroke="#64665f" stroke-dasharray="8 7" stroke-width="2.5" />
+    <text class="formula" x="1032" y="689" text-anchor="middle">ΔU ≈ 0</text>
+    <text class="detail" x="1032" y="717" text-anchor="middle">INTENDED CAPABILITY UNCHANGED</text>
+
+    <path class="flow" d="M1190 695H1265" marker-end="url(#arrow)" />
+    <rect x="1285" y="651" width="255" height="88" rx="22" fill="#f2f0e9" stroke="#64665f" stroke-dasharray="8 7" stroke-width="2.5" />
+    <text class="meaning" x="1412" y="687" text-anchor="middle">METRIC-ONLY</text>
+    <text class="meaning" x="1412" y="713" text-anchor="middle">GAIN</text>
+  </g>
+
+  <g>
+    <path d="M60 842H1540" stroke="#4056f4" stroke-linecap="round" stroke-width="4" />
+    <rect x="470" y="812" width="660" height="60" rx="20" fill="#f2f0e9" stroke="#4056f4" stroke-width="3" />
+    <text x="800" y="849" fill="#4056f4" font-size="17" font-weight="850" letter-spacing="1.35" text-anchor="middle">ONE LEADERBOARD NUMBER · FOUR CAUSAL STORIES</text>
+  </g>
+</svg>
