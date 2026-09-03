@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1040" role="img" aria-labelledby="title description">
+  <title id="title">Mobile comparison of SaaS, headless, and agentic architectures</title>
+  <desc id="description">
+    Three stacked rows show a person using a browser, several devices converging through an API, and a goal entering an agent tool loop. All connect to unresolved information, trust, security, control, and cost constraints.
+  </desc>
+  <defs>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#151712" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
+    </marker>
+    <style>
+      text { font-family: "Helvetica Neue", Arial, sans-serif; }
+      .heading { fill: #151712; font-size: 25px; font-weight: 830; letter-spacing: 2px; }
+      .anchor { fill: #151712; font-size: 13px; font-weight: 830; letter-spacing: 1px; }
+      .flow { fill: none; stroke: #151712; stroke-linecap: round; stroke-linejoin: round; stroke-width: 5; }
+      .blue { fill: none; stroke: #4056f4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6; }
+    </style>
+  </defs>
+  <rect width="720" height="1040" fill="#f2f0e9" />
+
+  <!-- SaaS row -->
+  <text class="heading" x="38" y="55">SAAS</text>
+  <path d="M38 76H682" stroke="#151712" stroke-width="2" />
+  <circle cx="95" cy="151" r="20" fill="#151712" />
+  <path d="M61 205c4-29 19-42 34-42s30 13 34 42Z" fill="#151712" />
+  <path class="flow" d="M136 174H188" marker-end="url(#arrow-black)" />
+  <rect x="210" y="112" width="188" height="124" rx="17" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+  <path d="M210 149H398" stroke="#151712" stroke-width="4" />
+  <circle cx="232" cy="130" r="5" fill="#151712" /><circle cx="249" cy="130" r="5" fill="#151712" /><circle cx="266" cy="130" r="5" fill="#151712" />
+  <rect x="235" y="169" width="56" height="42" rx="7" fill="#cdd3ff" />
+  <path d="M311 174H371M311 192H358M311 210H368" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+  <path class="flow" d="M404 174H488" marker-end="url(#arrow-black)" />
+  <rect x="510" y="119" width="142" height="110" rx="20" fill="#151712" />
+  <ellipse cx="581" cy="154" rx="30" ry="11" fill="none" stroke="#fff" stroke-width="5" />
+  <path d="M551 154v27c0 15 60 15 60 0v-27m-60 14c0 15 60 15 60 0" fill="none" stroke="#fff" stroke-width="5" />
+
+  <!-- Headless row -->
+  <text class="heading" x="38" y="316">HEADLESS</text>
+  <path d="M38 337H682" stroke="#151712" stroke-width="2" />
+  <rect x="55" y="380" width="90" height="63" rx="8" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+  <path d="M46 447H154" stroke="#151712" stroke-linecap="round" stroke-width="6" />
+  <rect x="171" y="372" width="42" height="81" rx="9" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+  <circle cx="192" cy="441" r="3" fill="#151712" />
+  <circle cx="265" cy="412" r="34" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+  <path d="M250 383h30l-6-13h-18Z" fill="#151712" />
+  <path class="blue" d="M100 449V477H304M192 453V477M265 446V477" />
+  <path class="blue" d="M304 477V492" marker-end="url(#arrow-blue)" />
+  <rect x="328" y="392" width="126" height="105" rx="21" fill="#4056f4" />
+  <path d="m360 435-18 12 18 12M421 435l18 12-18 12M405 423l-28 48" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" />
+  <path class="flow" d="M460 445H488" marker-end="url(#arrow-black)" />
+  <rect x="510" y="390" width="142" height="110" rx="20" fill="#151712" />
+  <ellipse cx="581" cy="425" rx="30" ry="11" fill="none" stroke="#fff" stroke-width="5" />
+  <path d="M551 425v27c0 15 60 15 60 0v-27m-60 14c0 15 60 15 60 0" fill="none" stroke="#fff" stroke-width="5" />
+
+  <!-- Agentic row -->
+  <text class="heading" x="38" y="578">AGENTIC</text>
+  <path d="M38 599H682" stroke="#151712" stroke-width="2" />
+  <circle cx="92" cy="688" r="38" fill="#f2f0e9" stroke="#4056f4" stroke-width="6" />
+  <circle cx="92" cy="688" r="15" fill="#4056f4" />
+  <path class="flow" d="M137 688H190" marker-end="url(#arrow-black)" />
+  <circle cx="304" cy="688" r="71" fill="#f2f0e9" stroke="#4056f4" stroke-width="6" />
+  <path d="M266 658c22-27 63-28 86-5M343 719c-23 26-63 27-86 3" fill="none" marker-end="url(#arrow-blue)" stroke="#4056f4" stroke-linecap="round" stroke-width="7" />
+  <circle cx="304" cy="688" r="27" fill="#151712" />
+  <circle cx="304" cy="680" r="7" fill="#fff" />
+  <path d="M292 704c3-12 21-12 24 0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="5" />
+  <rect x="194" y="655" width="70" height="66" rx="16" fill="#fffdfa" stroke="#151712" stroke-width="3" />
+  <path d="m215 692 13-13 15 15m-15-15v27" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+  <rect x="344" y="655" width="70" height="66" rx="16" fill="#fffdfa" stroke="#151712" stroke-width="3" />
+  <path d="M360 674c0-6 38-6 38 0s-38 6-38 0Zm0 0v24c0 6 38 6 38 0v-24m-38 12c0 6 38 6 38 0" fill="none" stroke="#151712" stroke-width="4" />
+  <path class="flow" d="M382 688H488" marker-end="url(#arrow-black)" />
+  <rect x="510" y="633" width="142" height="110" rx="20" fill="#151712" />
+  <ellipse cx="581" cy="668" rx="30" ry="11" fill="none" stroke="#fff" stroke-width="5" />
+  <path d="M551 668v27c0 15 60 15 60 0v-27m-60 14c0 15 60 15 60 0" fill="none" stroke="#fff" stroke-width="5" />
+
+  <!-- Shared constraints -->
+  <path d="M72 864H648" stroke="#4056f4" stroke-linecap="round" stroke-width="5" />
+  <g fill="#f2f0e9" stroke="#4056f4" stroke-width="4">
+    <circle cx="72" cy="864" r="35" /><circle cx="216" cy="864" r="35" /><circle cx="360" cy="864" r="35" /><circle cx="504" cy="864" r="35" /><circle cx="648" cy="864" r="35" />
+  </g>
+  <circle cx="72" cy="855" r="6" fill="#151712" /><path d="M72 868v16" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+  <circle cx="206" cy="858" r="7" fill="#151712" /><circle cx="226" cy="858" r="7" fill="#151712" /><path d="M194 880c3-12 21-12 24 0m0 0c3-12 21-12 24 0" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+  <rect x="343" y="857" width="34" height="27" rx="6" fill="#151712" /><path d="M349 857v-8c0-16 22-16 22 0v8" fill="none" stroke="#151712" stroke-width="4" />
+  <path d="m504 837 23 10v14c0 16-9 26-23 33-14-7-23-17-23-33v-14Z" fill="none" stroke="#151712" stroke-width="4" /><path d="m493 862 8 8 15-19" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+  <text x="648" y="879" fill="#151712" font-size="40" font-weight="650" text-anchor="middle">$</text>
+  <text class="anchor" x="72" y="930" text-anchor="middle">INFO</text><text class="anchor" x="216" y="930" text-anchor="middle">TRUST</text><text class="anchor" x="360" y="930" text-anchor="middle">SECURITY</text><text class="anchor" x="504" y="930" text-anchor="middle">CONTROL</text><text class="anchor" x="648" y="930" text-anchor="middle">COST</text>
+  <path d="M38 993H682" stroke="#151712" stroke-width="2" />
+</svg>

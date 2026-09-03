@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">SaaS, headless, and agentic control surfaces above shared constraints</title>
+  <desc id="description">
+    A person uses one browser in traditional SaaS, several devices converge through an API in a headless service, and a goal enters an agent tool loop in an agentic system. All three connect to the same unresolved information, trust, security, control, and cost constraints.
+  </desc>
+  <defs>
+    <marker id="arrow-black" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#151712" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
+    </marker>
+    <style>
+      text { font-family: "Helvetica Neue", Arial, sans-serif; }
+      .heading { fill: #151712; font-size: 24px; font-weight: 820; letter-spacing: 2px; }
+      .anchor { fill: #151712; font-size: 14px; font-weight: 820; letter-spacing: 1.3px; }
+      .flow { fill: none; stroke: #151712; stroke-linecap: round; stroke-linejoin: round; stroke-width: 5; }
+      .blue-flow { fill: none; stroke: #4056f4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 6; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f2f0e9" />
+  <path d="M535 70V590M1065 70V590" stroke="#c5c3bb" stroke-width="2" />
+
+  <text class="heading" x="270" y="74" text-anchor="middle">SAAS</text>
+  <text class="heading" x="800" y="74" text-anchor="middle">HEADLESS</text>
+  <text class="heading" x="1330" y="74" text-anchor="middle">AGENTIC</text>
+
+  <!-- Traditional SaaS: one person, one interface -->
+  <g>
+    <circle cx="270" cy="139" r="24" fill="#151712" />
+    <path d="M229 207c4-34 22-50 41-50s37 16 41 50Z" fill="#151712" />
+    <path class="flow" d="M270 213V252" marker-end="url(#arrow-black)" />
+
+    <rect x="155" y="276" width="230" height="136" rx="20" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <path d="M155 315H385" stroke="#151712" stroke-width="4" />
+    <circle cx="180" cy="296" r="6" fill="#151712" />
+    <circle cx="200" cy="296" r="6" fill="#151712" />
+    <circle cx="220" cy="296" r="6" fill="#151712" />
+    <rect x="183" y="337" width="70" height="52" rx="9" fill="#cdd3ff" />
+    <path d="M277 344H355M277 363H337M277 382H348" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+
+    <path class="flow" d="M270 412V453" marker-end="url(#arrow-black)" />
+  </g>
+
+  <!-- Headless: many channels, one API -->
+  <g>
+    <rect x="626" y="126" width="116" height="76" rx="10" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <path d="M612 207H756" stroke="#151712" stroke-linecap="round" stroke-width="7" />
+    <rect x="777" y="118" width="52" height="94" rx="11" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <circle cx="803" cy="197" r="4" fill="#151712" />
+    <circle cx="931" cy="162" r="39" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <path d="M913 128h36l-7-16h-22Z" fill="#151712" />
+
+    <path class="blue-flow" d="M684 211V246H800M803 212V260M931 201V246H800" />
+    <path class="blue-flow" d="M800 246V279" marker-end="url(#arrow-blue)" />
+
+    <rect x="720" y="300" width="160" height="112" rx="24" fill="#4056f4" />
+    <path d="m761 345-21 13 21 13M839 345l21 13-21 13M818 331l-34 54" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" />
+    <path class="flow" d="M800 412V453" marker-end="url(#arrow-black)" />
+  </g>
+
+  <!-- Agentic: goal and tool loop -->
+  <g>
+    <circle cx="1330" cy="157" r="46" fill="#f2f0e9" stroke="#4056f4" stroke-width="7" />
+    <circle cx="1330" cy="157" r="18" fill="#4056f4" />
+    <path class="flow" d="M1330 211V247" marker-end="url(#arrow-black)" />
+
+    <circle cx="1330" cy="344" r="73" fill="#f2f0e9" stroke="#4056f4" stroke-width="7" />
+    <path d="M1288 312c24-30 70-32 96-5" fill="none" marker-end="url(#arrow-blue)" stroke="#4056f4" stroke-linecap="round" stroke-width="7" />
+    <path d="M1374 374c-25 29-70 30-96 3" fill="none" marker-end="url(#arrow-blue)" stroke="#4056f4" stroke-linecap="round" stroke-width="7" />
+    <circle cx="1330" cy="344" r="29" fill="#151712" />
+    <circle cx="1330" cy="335" r="8" fill="#fff" />
+    <path d="M1316 361c3-13 25-13 28 0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6" />
+
+    <rect x="1138" y="311" width="92" height="66" rx="18" fill="#fffdfa" stroke="#151712" stroke-width="3" />
+    <path d="m1166 350 16-16 20 20M1182 334v29" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+    <path d="M1230 344H1257" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+
+    <rect x="1430" y="311" width="92" height="66" rx="18" fill="#fffdfa" stroke="#151712" stroke-width="3" />
+    <path d="M1455 331c0-7 42-7 42 0s-42 7-42 0Zm0 0v23c0 7 42 7 42 0v-23m-42 12c0 7 42 7 42 0" fill="none" stroke="#151712" stroke-width="4" />
+    <path d="M1403 344H1430" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+
+    <path class="flow" d="M1330 417V453" marker-end="url(#arrow-black)" />
+  </g>
+
+  <!-- Identical capability cores -->
+  <g>
+    <rect x="199" y="478" width="142" height="90" rx="20" fill="#151712" />
+    <ellipse cx="270" cy="507" rx="31" ry="12" fill="none" stroke="#fff" stroke-width="5" />
+    <path d="M239 507v27c0 16 62 16 62 0v-27m-62 14c0 16 62 16 62 0" fill="none" stroke="#fff" stroke-width="5" />
+
+    <rect x="729" y="478" width="142" height="90" rx="20" fill="#151712" />
+    <ellipse cx="800" cy="507" rx="31" ry="12" fill="none" stroke="#fff" stroke-width="5" />
+    <path d="M769 507v27c0 16 62 16 62 0v-27m-62 14c0 16 62 16 62 0" fill="none" stroke="#fff" stroke-width="5" />
+
+    <rect x="1259" y="478" width="142" height="90" rx="20" fill="#151712" />
+    <ellipse cx="1330" cy="507" rx="31" ry="12" fill="none" stroke="#fff" stroke-width="5" />
+    <path d="M1299 507v27c0 16 62 16 62 0v-27m-62 14c0 16 62 16 62 0" fill="none" stroke="#fff" stroke-width="5" />
+  </g>
+
+  <!-- Shared unresolved foundation -->
+  <g>
+    <path d="M270 568V690M800 568V690M1330 568V690M270 690H1330" fill="none" stroke="#4056f4" stroke-linecap="round" stroke-width="6" />
+
+    <circle cx="270" cy="690" r="53" fill="#f2f0e9" stroke="#4056f4" stroke-width="5" />
+    <circle cx="270" cy="675" r="8" fill="#151712" />
+    <path d="M270 691v24" stroke="#151712" stroke-linecap="round" stroke-width="7" />
+    <text class="anchor" x="270" y="774" text-anchor="middle">INFO</text>
+
+    <circle cx="535" cy="690" r="53" fill="#f2f0e9" stroke="#4056f4" stroke-width="5" />
+    <circle cx="519" cy="681" r="11" fill="#151712" />
+    <circle cx="551" cy="681" r="11" fill="#151712" />
+    <path d="M499 716c4-19 36-19 40 0M531 716c4-19 36-19 40 0" fill="none" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+    <text class="anchor" x="535" y="774" text-anchor="middle">TRUST</text>
+
+    <circle cx="800" cy="690" r="53" fill="#f2f0e9" stroke="#4056f4" stroke-width="5" />
+    <rect x="774" y="681" width="52" height="39" rx="8" fill="#151712" />
+    <path d="M783 681v-12c0-23 34-23 34 0v12" fill="none" stroke="#151712" stroke-width="6" />
+    <text class="anchor" x="800" y="774" text-anchor="middle">SECURITY</text>
+
+    <circle cx="1065" cy="690" r="53" fill="#f2f0e9" stroke="#4056f4" stroke-width="5" />
+    <path d="m1065 654 31 13v20c0 21-13 34-31 43-18-9-31-22-31-43v-20Z" fill="none" stroke="#151712" stroke-linejoin="round" stroke-width="5" />
+    <path d="m1050 689 11 11 21-26" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" />
+    <text class="anchor" x="1065" y="774" text-anchor="middle">CONTROL</text>
+
+    <circle cx="1330" cy="690" r="53" fill="#f2f0e9" stroke="#4056f4" stroke-width="5" />
+    <text x="1330" y="711" fill="#151712" font-size="56" font-weight="650" text-anchor="middle">$</text>
+    <text class="anchor" x="1330" y="774" text-anchor="middle">COST</text>
+  </g>
+
+  <path d="M60 838H1540" stroke="#151712" stroke-width="2" />
+</svg>

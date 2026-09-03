@@ -7,6 +7,13 @@ const contentImage = z.object({
   alt: z.string(),
   width: z.number().int().positive(),
   height: z.number().int().positive(),
+  mobile: z
+    .object({
+      src: z.string().startsWith('/'),
+      width: z.number().int().positive(),
+      height: z.number().int().positive(),
+    })
+    .optional(),
   caption: z.string().optional(),
   social: z.object({
     src: z.string().startsWith('/'),

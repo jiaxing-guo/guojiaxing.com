@@ -73,17 +73,27 @@ const {
         </div>
       </header>
       {heroImage && (
-        <figure class="entry-visual">
+        <figure class:list={['entry-visual', heroImage.mobile && 'entry-visual--responsive']}>
           <p class="entry-visual-hint" aria-hidden="true">Swipe to inspect →</p>
           <div class="entry-visual-frame" tabindex="0" aria-label="Scrollable article figure">
-            <img
-              src={heroImage.src}
-              alt={heroImage.alt}
-              width={heroImage.width}
-              height={heroImage.height}
-              loading="lazy"
-              decoding="async"
-            />
+            <picture>
+              {heroImage.mobile && (
+                <source
+                  media="(max-width: 620px)"
+                  srcset={heroImage.mobile.src}
+                  width={heroImage.mobile.width}
+                  height={heroImage.mobile.height}
+                />
+              )}
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={heroImage.width}
+                height={heroImage.height}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </div>
           {heroImage.caption && <figcaption>{heroImage.caption}</figcaption>}
         </figure>

@@ -921,6 +921,11 @@ h1 {
   height: auto;
 }
 
+.entry-visual picture,
+.article-figure picture {
+  display: block;
+}
+
 .entry-visual figcaption {
   max-width: 760px;
   margin: 18px auto 0;
@@ -1631,6 +1636,22 @@ h1 {
 
   .article-figure img {
     width: 860px;
+  }
+
+  .entry-visual--responsive .entry-visual-frame,
+  .article-figure--responsive .article-figure-frame {
+    overflow-x: hidden;
+  }
+
+  .entry-visual--responsive img,
+  .article-figure--responsive img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .entry-visual--responsive .entry-visual-hint,
+  .article-figure--responsive .article-figure-hint {
+    display: none;
   }
 
   .entry-visual figcaption {

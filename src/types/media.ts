@@ -3,6 +3,11 @@ export interface ContentImage {
   alt: string;
   width: number;
   height: number;
+  mobile?: {
+    src: string;
+    width: number;
+    height: number;
+  };
   caption?: string;
 }
 

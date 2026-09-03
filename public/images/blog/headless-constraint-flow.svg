@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title description">
+  <title id="title">Headless and agentic transformations remove, relocate, and amplify constraints</title>
+  <desc id="description">
+    Fixed interfaces and handoffs break apart on the left. Their complexity flows into a central control plane represented by authorization, evaluation, and recovery. The flow then branches into amplified authority, hidden errors, and cascading failures.
+  </desc>
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#4056f4" />
+    </marker>
+    <style>
+      text { font-family: "Helvetica Neue", Arial, sans-serif; }
+      .heading { fill: #151712; font-size: 24px; font-weight: 820; letter-spacing: 2px; }
+      .path { fill: none; stroke: #4056f4; stroke-linecap: round; stroke-linejoin: round; stroke-width: 7; }
+      .ink { fill: none; stroke: #151712; stroke-linecap: round; stroke-linejoin: round; stroke-width: 5; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#f2f0e9" />
+  <text class="heading" x="260" y="75" text-anchor="middle">REMOVE</text>
+  <text class="heading" x="800" y="75" text-anchor="middle">RELOCATE</text>
+  <text class="heading" x="1340" y="75" text-anchor="middle">AMPLIFY</text>
+  <path d="M60 104H460M600 104H1000M1140 104H1540" stroke="#151712" stroke-width="2" />
+
+  <!-- One transformation path -->
+  <path class="path" d="M468 450C550 450 565 450 624 450M976 450C1040 450 1056 450 1132 450" />
+  <circle cx="468" cy="450" r="11" fill="#4056f4" />
+  <circle cx="1132" cy="450" r="11" fill="#4056f4" />
+
+  <!-- REMOVE: interface splits -->
+  <g>
+    <rect x="104" y="164" width="236" height="142" rx="18" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <path d="M104 204H340" stroke="#151712" stroke-width="4" />
+    <circle cx="128" cy="184" r="6" fill="#151712" />
+    <circle cx="148" cy="184" r="6" fill="#151712" />
+    <circle cx="168" cy="184" r="6" fill="#151712" />
+    <rect x="132" y="229" width="62" height="46" rx="8" fill="#cdd3ff" />
+    <path d="M217 235H309M217 254H291M217 273H302" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+    <path d="m215 150 16 24-19 20 20 22-19 20 20 23-18 24 16 30" fill="#f2f0e9" stroke="#4056f4" stroke-linejoin="round" stroke-width="6" />
+    <path class="path" d="M90 235H50M354 235H394" marker-end="url(#arrow-blue)" />
+  </g>
+
+  <!-- REMOVE: handoffs collapse -->
+  <g>
+    <rect x="75" y="402" width="94" height="64" rx="15" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <rect x="296" y="402" width="94" height="64" rx="15" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <path class="path" d="M169 434H219C243 434 245 402 270 402H296" marker-end="url(#arrow-blue)" />
+    <path class="path" d="M169 434H219C243 434 245 466 270 466H296" marker-end="url(#arrow-blue)" />
+    <path d="M101 434H143M322 434H364" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+  </g>
+
+  <!-- REMOVE: rigid path opens -->
+  <g>
+    <circle cx="92" cy="664" r="19" fill="#151712" />
+    <circle cx="216" cy="664" r="19" fill="#151712" />
+    <circle cx="384" cy="664" r="19" fill="#151712" />
+    <path d="M111 664H197M235 664H365" stroke="#151712" stroke-linecap="round" stroke-width="7" />
+    <path class="path" d="M216 645C231 601 276 589 321 599" marker-end="url(#arrow-blue)" />
+    <path class="path" d="M216 683C231 727 276 739 321 729" marker-end="url(#arrow-blue)" />
+  </g>
+
+  <!-- RELOCATE: control plane -->
+  <g>
+    <rect x="624" y="142" width="352" height="616" rx="176" fill="#fffdfa" stroke="#4056f4" stroke-width="6" />
+    <ellipse cx="800" cy="450" rx="203" ry="350" fill="none" stroke="#4056f4" stroke-dasharray="3 12" stroke-linecap="round" stroke-width="3" />
+
+    <path d="m800 194 58 24v42c0 42-24 70-58 88-34-18-58-46-58-88v-42Z" fill="#f2f0e9" stroke="#151712" stroke-linejoin="round" stroke-width="5" />
+    <circle cx="800" cy="252" r="14" fill="none" stroke="#4056f4" stroke-width="7" />
+    <path d="M800 266v33M800 287h21" stroke="#4056f4" stroke-linecap="round" stroke-width="7" />
+
+    <path d="M697 391H903" stroke="#c5c3bb" stroke-dasharray="3 9" stroke-linecap="round" stroke-width="3" />
+    <circle cx="790" cy="467" r="53" fill="#f2f0e9" stroke="#151712" stroke-width="6" />
+    <path d="M829 506 871 548" stroke="#151712" stroke-linecap="round" stroke-width="13" />
+    <path d="m765 467 18 18 35-43" fill="none" stroke="#4056f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" />
+
+    <path d="M697 579H903" stroke="#c5c3bb" stroke-dasharray="3 9" stroke-linecap="round" stroke-width="3" />
+    <path d="M847 676a69 69 0 1 1 9-93" fill="none" marker-end="url(#arrow-blue)" stroke="#4056f4" stroke-linecap="round" stroke-width="9" />
+    <path d="M800 615v46h43" fill="none" stroke="#151712" stroke-linecap="round" stroke-linejoin="round" stroke-width="7" />
+  </g>
+
+  <!-- AMPLIFY: expanding authority -->
+  <g>
+    <circle cx="1328" cy="220" r="28" fill="#4056f4" />
+    <circle cx="1328" cy="210" r="8" fill="#fff" />
+    <path d="M1314 237c4-17 24-17 28 0" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="6" />
+    <circle cx="1328" cy="220" r="58" fill="none" stroke="#4056f4" stroke-dasharray="5 9" stroke-width="4" />
+    <circle cx="1328" cy="220" r="91" fill="none" stroke="#4056f4" stroke-dasharray="5 11" stroke-width="3" />
+    <path class="path" d="M1328 112V86M1436 220h28M1220 220h-28M1405 143l20-20M1251 297l-20 20" marker-end="url(#arrow-blue)" />
+  </g>
+
+  <!-- AMPLIFY: clean endpoint hides error -->
+  <g>
+    <rect x="1178" y="389" width="300" height="102" rx="22" fill="#fffdfa" stroke="#151712" stroke-width="4" />
+    <circle cx="1210" cy="420" r="6" fill="#151712" />
+    <circle cx="1230" cy="420" r="6" fill="#151712" />
+    <circle cx="1250" cy="420" r="6" fill="#151712" />
+    <path d="M1379 420H1446" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+    <rect x="1178" y="491" width="300" height="84" rx="0" fill="none" stroke="#4056f4" stroke-dasharray="8 8" stroke-width="4" />
+    <path d="m1328 512 28 48h-56Z" fill="#f2f0e9" stroke="#4056f4" stroke-linejoin="round" stroke-width="5" />
+    <path d="M1328 529v13m0 8v1" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+  </g>
+
+  <!-- AMPLIFY: cascading failure -->
+  <g>
+    <path d="m1196 717 33-57 33 57Z" fill="#f2f0e9" stroke="#4056f4" stroke-linejoin="round" stroke-width="5" />
+    <path d="M1229 679v16m0 9v1" stroke="#151712" stroke-linecap="round" stroke-width="5" />
+    <path d="M1262 695 1326 650M1262 695l64 45M1326 650l80-34M1326 650l80 34M1326 740l80-34M1326 740l80 34" fill="none" stroke="#4056f4" stroke-dasharray="5 7" stroke-width="4" />
+    <g fill="#f2f0e9" stroke="#151712" stroke-width="4">
+      <circle cx="1326" cy="650" r="17" /><circle cx="1326" cy="740" r="17" />
+      <circle cx="1406" cy="616" r="17" /><circle cx="1406" cy="684" r="17" />
+      <circle cx="1406" cy="706" r="17" /><circle cx="1406" cy="774" r="17" />
+    </g>
+    <path d="M1423 616H1490M1423 684H1490M1423 706H1490M1423 774H1490" stroke="#4056f4" stroke-dasharray="5 7" stroke-width="4" />
+    <g fill="#f2f0e9" stroke="#4056f4" stroke-width="4">
+      <circle cx="1507" cy="616" r="17" /><circle cx="1507" cy="684" r="17" />
+      <circle cx="1507" cy="706" r="17" /><circle cx="1507" cy="774" r="17" />
+    </g>
+  </g>
+
+  <path d="M60 840H1540" stroke="#151712" stroke-width="2" />
+</svg>
