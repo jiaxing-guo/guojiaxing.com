@@ -46,7 +46,7 @@
   <path class="blue" d="M124 868v22M203 947h22M45 947H23" marker-end="url(#arrow-blue)" />
 
   <rect x="266" y="900" width="188" height="69" rx="16" fill="#fffdfa" stroke="#151712" stroke-width="4" /><circle cx="291" cy="923" r="5" fill="#151712" /><circle cx="308" cy="923" r="5" fill="#151712" /><circle cx="325" cy="923" r="5" fill="#151712" /><path d="M391 923H431" stroke="#151712" stroke-linecap="round" stroke-width="4" />
-  <rect x="266" y="969" width="188" height="62" fill="none" stroke="#4056f4" stroke-dasharray="7 7" stroke-width="4" /><path d="m360 984 20 34h-40Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="4" /><path d="M360 994v10m0 6v1" stroke="#151712" stroke-linecap="round" stroke-width="4" />
+  <rect x="266" y="981" width="188" height="50" fill="none" stroke="#4056f4" stroke-dasharray="7 7" stroke-width="4" /><path d="m360 987 18 31h-36Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="4" /><path d="M360 996v9m0 6v1" stroke="#151712" stroke-linecap="round" stroke-width="4" />
 
   <path d="m495 1014 24-42 24 42Z" fill="#f2f0e9" stroke="#4056f4" stroke-width="4" /><path d="M519 986v12m0 7v1" stroke="#151712" stroke-linecap="round" stroke-width="4" />
   <path d="M543 996 582 968M543 996l39 28M582 968l43-20M582 968l43 20M582 1024l43-20M582 1024l43 20" fill="none" stroke="#4056f4" stroke-dasharray="4 6" stroke-width="3" />
