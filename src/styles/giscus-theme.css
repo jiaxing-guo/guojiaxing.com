@@ -1,0 +1,55 @@
+@import url('https://giscus.app/themes/noborder_light.css');
+
+:root,
+main {
+  --font-family-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-btn-primary-text: #f2f0e9;
+  --color-btn-primary-bg: #151712;
+  --color-btn-primary-border: #151712;
+  --color-btn-primary-shadow: none;
+  --color-btn-primary-inset-shadow: none;
+  --color-btn-primary-hover-bg: #4056f4;
+  --color-btn-primary-hover-border: #4056f4;
+  --color-btn-primary-selected-bg: #4056f4;
+  --color-btn-primary-selected-shadow: none;
+  --color-fg-default: #151712;
+  --color-fg-muted: #64665f;
+  --color-fg-subtle: rgb(100 102 95 / 55%);
+  --color-canvas-default: #f2f0e9;
+  --color-canvas-overlay: #f2f0e9;
+  --color-canvas-inset: rgb(255 255 255 / 28%);
+  --color-canvas-subtle: #e9e6dc;
+  --color-border-default: rgb(21 23 18 / 22%);
+  --color-border-muted: rgb(21 23 18 / 14%);
+  --color-accent-fg: #4056f4;
+  --color-accent-emphasis: #4056f4;
+  --color-accent-muted: rgb(64 86 244 / 38%);
+  --color-accent-subtle: rgb(64 86 244 / 10%);
+}
+
+.gsc-homepage-bg {
+  background-color: #f2f0e9;
+}
+
+.gsc-comments > .gsc-header {
+  display: none;
+}
+
+.gsc-comment-box,
+.gsc-comment-box-tabs,
+.gsc-comment-box-write,
+.gsc-comment-box-textarea,
+.btn,
+.BtnGroup,
+.BtnGroup-item {
+  border-radius: 0 !important;
+}
+
+.gsc-comment-box {
+  border: 1px solid rgb(21 23 18 / 22%);
+  box-shadow: none;
+}
+
+.gsc-comment-box-textarea {
+  min-height: 116px;
+}

@@ -1,5 +1,6 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BlogComments from '../../components/BlogComments.astro';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { formatDate } from '../../utils/date';
 import { createBlogPostingSchema } from '../../utils/structuredData';
@@ -62,6 +63,10 @@ const structuredData = createBlogPostingSchema({
   publishedTime={entry.data.publishedAt}
   modifiedTime={entry.data.updatedAt}
   structuredData={structuredData}
+  hasComments
 >
   <Content />
+  <Fragment slot="comments">
+    <BlogComments />
+  </Fragment>
 </ContentLayout>

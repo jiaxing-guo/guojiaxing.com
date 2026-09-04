@@ -1,0 +1,41 @@
+---
+import { giscusConfig } from '../data/comments';
+import { site } from '../data/site';
+import giscusTheme from '../styles/giscus-theme.css?raw';
+
+const giscusThemeUrl = import.meta.env.DEV
+  ? `data:text/css;charset=utf-8,${encodeURIComponent(giscusTheme)}`
+  : new URL('/giscus-theme.css', site.url).href;
+---
+
+<section id="discussion" class="blog-comments" aria-labelledby="blog-comments-title">
+  <header class="blog-comments-header">
+    <p class="eyebrow">Discussion</p>
+    <div>
+      <h2 id="blog-comments-title">Continue the argument.</h2>
+      <p>Questions, counterexamples, and extensions are welcome.</p>
+    </div>
+    <a class="blog-comments-return" href="#article-top">Back to top ↑</a>
+  </header>
+
+  <div class="giscus-shell">
+    <script
+      is:inline
+      src="https://giscus.app/client.js"
+      data-repo={giscusConfig.repo}
+      data-repo-id={giscusConfig.repoId}
+      data-category={giscusConfig.category}
+      data-category-id={giscusConfig.categoryId}
+      data-mapping="pathname"
+      data-strict="1"
+      data-reactions-enabled="0"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme={giscusThemeUrl}
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+</section>

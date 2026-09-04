@@ -21,6 +21,7 @@ interface Props {
   publishedTime?: Date;
   modifiedTime?: Date;
   structuredData?: StructuredData | StructuredData[];
+  hasComments?: boolean;
 }
 
 const {
@@ -40,6 +41,7 @@ const {
   publishedTime,
   modifiedTime,
   structuredData,
+  hasComments = false,
 } = Astro.props;
 ---
 
@@ -55,7 +57,7 @@ const {
   structuredData={structuredData}
 >
   <main id="main-content">
-    <article class="entry shell">
+    <article id="article-top" class="entry shell">
       <a class="back-link" href={backHref}>← {backLabel}</a>
       <header class="entry-header">
         <p class="eyebrow">{eyebrow}</p>
@@ -100,7 +102,7 @@ const {
       )}
       <div class:list={['entry-body', tableOfContents.length > 0 && 'entry-body--with-toc']}>
         {tableOfContents.length > 0 && (
-          <aside class="entry-toc" aria-label="Table of contents">
+          <aside class:list={['entry-toc', hasComments && 'entry-toc--with-comments']} aria-label="Table of contents">
             <p>On this page</p>
             <ol>
               {tableOfContents.map((heading) => (
@@ -109,11 +111,18 @@ const {
                 </li>
               ))}
             </ol>
+            {hasComments && (
+              <nav class="entry-toc-actions" aria-label="Article shortcuts">
+                <a href="#discussion">Discussion <span aria-hidden="true">↓</span></a>
+                <a href="#article-top">Top <span aria-hidden="true">↑</span></a>
+              </nav>
+            )}
           </aside>
         )}
         <div class="prose">
           <slot />
         </div>
+        <slot name="comments" />
       </div>
     </article>
   </main>
