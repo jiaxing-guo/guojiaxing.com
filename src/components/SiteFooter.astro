@@ -19,6 +19,7 @@ const year = new Date().getFullYear();
     <p>© {year} Guo Jiaxing</p>
     <nav aria-label="Footer navigation">
       {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+      <button type="button" data-open-analytics-settings>Analytics settings</button>
     </nav>
   </div>
 </footer>

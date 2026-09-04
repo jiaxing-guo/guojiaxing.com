@@ -1,0 +1,297 @@
+---
+const measurementId = 'G-9SGM3P0482';
+---
+
+<aside
+  class="analytics-consent"
+  role="dialog"
+  aria-modal="false"
+  aria-labelledby="analytics-consent-title"
+  data-analytics-consent
+  data-measurement-id={measurementId}
+  data-production={String(import.meta.env.PROD)}
+  hidden
+>
+  <div class="analytics-consent-index">
+    <span>Cookie</span>
+    <span class="analytics-consent-pixels" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+  <h2 id="analytics-consent-title">Help me see what resonates.</h2>
+  <p>I use Google Analytics to count visits and improve the site. No advertising cookies.</p>
+  <div class="analytics-consent-rule" aria-hidden="true"></div>
+  <div class="analytics-consent-actions">
+    <button type="button" data-analytics-choice="granted" aria-pressed="false">Allow</button>
+    <button type="button" data-analytics-choice="denied" aria-pressed="false">Decline</button>
+  </div>
+  <small>You can change this choice at any time.</small>
+  <span class="visually-hidden" aria-live="polite" data-analytics-status></span>
+</aside>
+
+<script is:inline>
+  (() => {
+    const panel = document.querySelector('[data-analytics-consent]');
+    if (!(panel instanceof HTMLElement)) return;
+
+    const measurementId = panel.dataset.measurementId;
+    if (!measurementId) return;
+
+    const choiceKey = 'guojiaxing:analytics-consent:v1';
+    const disableKey = `ga-disable-${measurementId}`;
+    const isProduction = panel.dataset.production === 'true';
+    const status = panel.querySelector('[data-analytics-status]');
+    const choiceButtons = panel.querySelectorAll('[data-analytics-choice]');
+    let settingsOpener = null;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+
+    const deniedConsent = {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+    };
+
+    window.gtag('consent', 'default', deniedConsent);
+
+    function readChoice() {
+      try {
+        const value = window.localStorage.getItem(choiceKey);
+        return value === 'granted' || value === 'denied' ? value : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function saveChoice(choice) {
+      try {
+        window.localStorage.setItem(choiceKey, choice);
+      } catch {
+        // The current-page choice still applies when storage is unavailable.
+      }
+    }
+
+    function clearAnalyticsCookies() {
+      const cookieNames = document.cookie
+        .split(';')
+        .map((cookie) => cookie.split('=')[0]?.trim())
+        .filter((name) => name && /^(?:_ga|_gid|_gat|_gac)/.test(name));
+      const secure = window.location.protocol === 'https:' ? '; Secure' : '';
+      const domains = [window.location.hostname, `.${window.location.hostname}`];
+
+      cookieNames.forEach((name) => {
+        document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax${secure}`;
+        domains.forEach((domain) => {
+          document.cookie = `${name}=; Max-Age=0; path=/; domain=${domain}; SameSite=Lax${secure}`;
+        });
+      });
+    }
+
+    function loadAnalytics() {
+      if (!isProduction || document.querySelector('[data-google-analytics]')) return;
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      script.dataset.googleAnalytics = '';
+      document.head.append(script);
+
+      window.gtag('js', new Date());
+      window.gtag('config', measurementId, {
+        allow_ad_personalization_signals: false,
+        allow_google_signals: false,
+      });
+    }
+
+    function updatePanel(choice) {
+      panel.dataset.state = choice || 'unset';
+      choiceButtons.forEach((button) => {
+        if (button instanceof HTMLButtonElement) {
+          button.setAttribute('aria-pressed', String(button.dataset.analyticsChoice === choice));
+        }
+      });
+    }
+
+    function applyChoice(choice, persist = false) {
+      const granted = choice === 'granted';
+      window[disableKey] = !granted;
+      window.gtag('consent', 'update', {
+        ...deniedConsent,
+        analytics_storage: granted ? 'granted' : 'denied',
+      });
+
+      if (persist) saveChoice(choice);
+      if (granted) loadAnalytics();
+      else clearAnalyticsCookies();
+      updatePanel(choice);
+    }
+
+    function openPanel(opener = null) {
+      settingsOpener = opener;
+      updatePanel(readChoice());
+      panel.hidden = false;
+    }
+
+    function closePanel(choice) {
+      applyChoice(choice, true);
+      panel.hidden = true;
+      if (status) status.textContent = choice === 'granted' ? 'Analytics allowed.' : 'Analytics declined.';
+      if (settingsOpener instanceof HTMLElement) settingsOpener.focus();
+      settingsOpener = null;
+    }
+
+    choiceButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const choice = button.getAttribute('data-analytics-choice');
+        if (choice === 'granted' || choice === 'denied') closePanel(choice);
+      });
+    });
+
+    document.querySelectorAll('[data-open-analytics-settings]').forEach((button) => {
+      button.addEventListener('click', () => openPanel(button));
+    });
+
+    const savedChoice = readChoice();
+    if (savedChoice) applyChoice(savedChoice);
+    else {
+      window[disableKey] = true;
+      openPanel();
+    }
+  })();
+</script>
+
+<style>
+  .analytics-consent {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 90;
+    width: min(390px, calc(100vw - 32px));
+    padding: 22px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: -7px 7px 0 var(--signal-soft);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, calc(100% - 12px) 6px, calc(100% - 6px) 6px, calc(100% - 6px) 12px, 100% 12px, 100% 100%, 0 100%);
+    font-family: var(--sans);
+  }
+
+  .analytics-consent[hidden] {
+    display: none;
+  }
+
+  .analytics-consent-index {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: var(--signal);
+    font-size: 9px;
+    font-weight: 780;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .analytics-consent-pixels {
+    display: flex;
+    gap: 4px;
+  }
+
+  .analytics-consent-pixels i {
+    width: 4px;
+    height: 4px;
+    background: var(--line);
+  }
+
+  .analytics-consent[data-state='unset'] .analytics-consent-pixels i:first-child,
+  .analytics-consent[data-state='granted'] .analytics-consent-pixels i {
+    background: var(--signal);
+  }
+
+  .analytics-consent[data-state='denied'] .analytics-consent-pixels i:last-child {
+    background: var(--ink);
+  }
+
+  .analytics-consent h2 {
+    margin: 0 0 13px;
+    font-family: var(--display);
+    font-size: 31px;
+    font-weight: 520;
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+  }
+
+  .analytics-consent > p {
+    margin: 0 0 18px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .analytics-consent-rule {
+    height: 1px;
+    margin-bottom: 17px;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 8px, transparent 8px 13px);
+  }
+
+  .analytics-consent-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .analytics-consent-actions button {
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 780;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .analytics-consent-actions button:first-child {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .analytics-consent-actions button:last-child {
+    border-color: var(--signal);
+    color: var(--signal);
+  }
+
+  .analytics-consent-actions button[aria-pressed='true'] {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+  }
+
+  .analytics-consent-actions button:hover,
+  .analytics-consent-actions button:focus-visible {
+    border-color: var(--signal);
+    background: var(--signal);
+    color: #fff;
+    outline: none;
+  }
+
+  .analytics-consent small {
+    display: block;
+    margin-top: 13px;
+    color: var(--muted);
+    font-size: 9px;
+  }
+
+  @media (max-width: 620px) {
+    .analytics-consent {
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      width: auto;
+    }
+  }
+</style>
