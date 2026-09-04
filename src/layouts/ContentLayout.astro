@@ -14,6 +14,7 @@ interface Props {
   backHref: string;
   backLabel: string;
   authors?: string[];
+  author?: { name: string; href: string };
   links?: Array<{ label: string; href: string }>;
   tableOfContents?: Array<{ depth: number; slug: string; text: string }>;
   heroImage?: ContentImage;
@@ -34,6 +35,7 @@ const {
   backHref,
   backLabel,
   authors,
+  author,
   links = [],
   tableOfContents = [],
   heroImage,
@@ -65,6 +67,7 @@ const {
         <p class="entry-summary">{summary}</p>
         <div class="entry-details">
           <p>{meta}</p>
+          {author && <p class="entry-byline">By <a rel="author" href={author.href}>{author.name}</a></p>}
           {authors && <p class="entry-authors">{authors.join(', ')}</p>}
           <p>{topics.join(' · ')}</p>
           <div class="entry-links">

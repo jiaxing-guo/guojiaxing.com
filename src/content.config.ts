@@ -24,6 +24,13 @@ const contentImage = z.object({
   structured: z.array(z.string().startsWith('/')).min(1),
 });
 
+const relatedContent = z.object({
+  eyebrow: z.string(),
+  title: z.string(),
+  summary: z.string(),
+  href: z.string().startsWith('/'),
+});
+
 const research = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/research' }),
   schema: z.object({
@@ -45,6 +52,7 @@ const research = defineCollection({
     doi: z.url().optional(),
     attachment: z.string().startsWith('/').optional(),
     projectId: z.string().optional(),
+    blogId: z.string().optional(),
     featured: z.boolean().default(false),
     order: z.number(),
   }),
@@ -75,6 +83,7 @@ const blog = defineCollection({
     updatedAt: z.coerce.date().optional(),
     tags: z.array(z.string()),
     image: contentImage.optional(),
+    related: z.array(relatedContent).min(2).max(3),
     draft: z.boolean().default(false),
   }),
 });

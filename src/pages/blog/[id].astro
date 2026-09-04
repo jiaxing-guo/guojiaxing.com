@@ -1,6 +1,8 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BlogComments from '../../components/BlogComments.astro';
+import RelatedReading from '../../components/RelatedReading.astro';
+import { site } from '../../data/site';
 import ContentLayout from '../../layouts/ContentLayout.astro';
 import { formatDate } from '../../utils/date';
 import { createBlogPostingSchema } from '../../utils/structuredData';
@@ -46,6 +48,9 @@ const structuredData = createBlogPostingSchema({
   tags: entry.data.tags,
   images: entry.data.image?.structured,
 });
+const dateMeta = entry.data.updatedAt
+  ? `${formatDate(entry.data.publishedAt)} / Updated ${formatDate(entry.data.updatedAt)}`
+  : formatDate(entry.data.publishedAt);
 ---
 
 <ContentLayout
@@ -53,7 +58,7 @@ const structuredData = createBlogPostingSchema({
   pageTitle={entry.data.seoTitle}
   summary={entry.data.summary}
   eyebrow="Blog"
-  meta={formatDate(entry.data.publishedAt)}
+  meta={dateMeta}
   topics={entry.data.tags}
   backHref="/blog/"
   backLabel="All posts"
@@ -63,9 +68,11 @@ const structuredData = createBlogPostingSchema({
   publishedTime={entry.data.publishedAt}
   modifiedTime={entry.data.updatedAt}
   structuredData={structuredData}
+  author={{ name: site.name, href: '/about/' }}
   hasComments
 >
   <Content />
+  <RelatedReading items={entry.data.related} />
   <Fragment slot="comments">
     <BlogComments />
   </Fragment>

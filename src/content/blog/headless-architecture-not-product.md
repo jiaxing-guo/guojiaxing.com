@@ -8,6 +8,15 @@ tags:
   - AI agents
   - Software architecture
   - Product strategy
+related:
+  - eyebrow: Blog
+    title: A Benchmark Is a Game Against the Model
+    summary: How optimization against a visible mechanism can drift away from the intended outcome.
+    href: /blog/benchmark-exploitability/
+  - eyebrow: Blog
+    title: "The Gap to AGI: Learning How to Think"
+    summary: Why intelligent systems may need to adapt computation to the problem in front of them.
+    href: /blog/gap-to-agi/
 image:
   src: /images/blog/headless-architecture-diagram.svg
   alt: Diagram comparing traditional SaaS, headless services, and agentic systems above shared information, trust, security, control, and cost constraints.

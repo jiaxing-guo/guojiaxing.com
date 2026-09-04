@@ -3,6 +3,7 @@ import { site } from '../data/site';
 export type StructuredData = Record<string, unknown>;
 
 const personId = new URL('/#person', site.url).href;
+const personProfileUrl = new URL('/about/', site.url).href;
 
 function personReference(name: string = site.alternateName): StructuredData {
   if (name === site.name || name === site.alternateName) {
@@ -11,11 +12,23 @@ function personReference(name: string = site.alternateName): StructuredData {
       '@id': personId,
       name: site.name,
       alternateName: site.alternateName,
-      url: site.url,
+      url: personProfileUrl,
+      sameAs: [site.github, site.linkedin, site.arxiv],
     };
   }
 
   return { '@type': 'Person', name };
+}
+
+export function createProfilePageSchema(): StructuredData {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${personProfileUrl}#profile`,
+    url: personProfileUrl,
+    name: `About ${site.name}`,
+    mainEntity: personReference(site.name),
+  };
 }
 
 export function createBlogPostingSchema(input: {

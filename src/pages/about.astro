@@ -3,11 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import profilePhoto from '../assets/guo-jiaxing-profile.png';
 import { site } from '../data/site';
+import { createProfilePageSchema } from '../utils/structuredData';
+
+const structuredData = createProfilePageSchema();
 ---
 
 <BaseLayout
   title="About — Guo Jiaxing"
   description="About Guo Jiaxing and his work on reliable strategic decision-making."
+  structuredData={structuredData}
 >
   <main id="main-content">
     <header class="page-hero page-hero--about shell">

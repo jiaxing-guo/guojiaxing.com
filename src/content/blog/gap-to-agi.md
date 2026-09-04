@@ -1,12 +1,26 @@
 ---
 title: "The Gap to AGI: Learning How to Think"
+seoTitle: "Why AGI May Require Adaptive Computation"
 summary: General intelligence may require adapting the form of computation, not only scaling the amount of reasoning.
 publishedAt: 2026-08-27
-updatedAt: 2026-08-30
+updatedAt: 2026-09-03
 tags:
   - Artificial intelligence
   - Adaptive computation
   - Reasoning
+related:
+  - eyebrow: Blog
+    title: A Benchmark Is a Game Against the Model
+    summary: Why public evaluations become strategic environments rather than passive measurements.
+    href: /blog/benchmark-exploitability/
+  - eyebrow: Research
+    title: Model-Guided Public-Belief Search
+    summary: Research tools that connect learned models with strategic search under hidden information.
+    href: /research/public-belief-search/
+  - eyebrow: Research
+    title: LLM Exploitability Audits
+    summary: Exact strategic audits of language-model policies in imperfect-information games.
+    href: /research/llm-exploitability-audit/
 image:
   src: /images/blog/gap-to-agi-diagram.svg
   alt: Diagram showing chess, poker, and strategic interaction moving through a shared computational manifold that reshapes into search, belief, and strategy.
@@ -29,7 +43,7 @@ LLMs are becoming remarkably good at reasoning. They have achieved superhuman pe
 
 And yet there is a strange asymmetry: ask the same general-purpose model to play chess or poker, conduct a difficult negotiation, or enter an unfamiliar interactive environment, and its performance often looks much less impressive. These problems are not fundamentally beyond AI.
 
-Superhuman chess programs have existed for decades, since Deep Blue defeated world champion Garry Kasparov in 1997. Poker has seen similar superhuman systems. We know that extremely effective algorithms exist for these environments.
+[Superhuman chess programs have existed for decades](https://www.ibm.com/history/deep-blue), since Deep Blue defeated world champion Garry Kasparov in 1997. Poker has seen similar systems: [Libratus defeated top professionals in heads-up no-limit hold'em](https://pubmed.ncbi.nlm.nih.gov/29249696/), while [Pluribus surpassed elite professionals in six-player no-limit hold'em](https://doi.org/10.1126/science.aay2400). We know that extremely effective algorithms exist for these environments.
 
 So perhaps the remaining gap is not simply more intelligence, more knowledge, or even more reasoning. Perhaps part of the gap is learning **what kind of reasoning a problem requires**.
 
@@ -111,6 +125,8 @@ Likewise:
 > “This environment is deterministic, fully observable, and adversarial. Forward simulation and pruning should dominate.”
 
 The distinction is subtle. The first is **algorithm selection**. The second is **adaptive computation**.
+
+This proposal is related to [adaptive computation time](https://arxiv.org/abs/1603.08983), but it asks about changing the form of computation rather than only its amount.
 
 ## An algorithm manifold
 

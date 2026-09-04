@@ -1,11 +1,26 @@
 ---
 title: The Price of Seeing
+seoTitle: "Safe Exploration Under Censored Feedback"
 summary: How safe exploration can create the evidence needed to learn hidden behavior in imperfect-information games.
 publishedAt: 2026-08-30
+updatedAt: 2026-09-03
 tags:
   - Game theory
   - Active learning
   - Poker
+related:
+  - eyebrow: Research
+    title: Safe Observation Capacity
+    summary: The preprint, central question, contribution, citation, and supporting materials.
+    href: /research/safe-observation-capacity/
+  - eyebrow: Project
+    title: Safe Observation Capacity Code
+    summary: Research software for active de-censoring in imperfect-information games.
+    href: /project/safe-observation-capacity/
+  - eyebrow: Blog
+    title: A Benchmark Is a Game Against the Model
+    summary: A related argument about measurements that change the systems being measured.
+    href: /blog/benchmark-exploitability/
 image:
   src: /images/blog/the-price-of-seeing-diagram.svg
   alt: Diagram comparing passive poker observation, which hides folded hands and produces a biased estimate, with safe exploration, which reveals the missing evidence while preserving a safety floor.
@@ -26,7 +41,7 @@ draft: false
 
 *In poker, the hands you most want to learn from are often the ones you never get to see.*
 
-This essay develops ideas from my preprint, [Safe Observation Capacity for Opponent Exploitation under Showdown Censoring](https://arxiv.org/abs/2608.09954).
+This essay develops ideas from my research on [Safe Observation Capacity for Opponent Exploitation under Showdown Censoring](/research/safe-observation-capacity/). The full [arXiv preprint](https://arxiv.org/abs/2608.09954) is also available.
 
 The accompanying [code and experiments](https://github.com/jiaxing-guo/safe-observation-capacity) are also available.
 
@@ -358,4 +373,4 @@ The broader idea is simple:
 
 Once that happens, learning becomes inseparable from deciding where to go, what to risk, and what is worth seeing.
 
-Read the full [preprint](https://arxiv.org/abs/2608.09954) or explore the [research code](https://github.com/jiaxing-guo/safe-observation-capacity).
+Read the [research summary](/research/safe-observation-capacity/), open the full [preprint](https://arxiv.org/abs/2608.09954), or explore the [research code](https://github.com/jiaxing-guo/safe-observation-capacity).

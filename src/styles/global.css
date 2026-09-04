@@ -878,11 +878,17 @@ h1 {
   text-transform: uppercase;
 }
 
-.entry-details > .entry-authors {
+.entry-details > .entry-authors,
+.entry-details > .entry-byline {
   color: var(--ink);
   font-size: 13px;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.entry-byline a {
+  text-decoration-color: var(--signal);
+  text-underline-offset: 3px;
 }
 
 .entry-links {

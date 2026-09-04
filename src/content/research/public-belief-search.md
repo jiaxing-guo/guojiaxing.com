@@ -10,6 +10,7 @@ topics:
   - Model-guided planning
 repo: https://github.com/jiaxing-guo/batr-research
 projectId: batr-research
+blogId: gap-to-agi
 featured: false
 order: 4
 ---
